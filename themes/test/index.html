@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>mtfxyn's blog</title>
+</head>
+<body>
+	<div id="main" class="wrapper">
+		<div id="primary" class="site-content">
+			<div id="content" role="main">
+				{{ #articleList.length }}
+				{{ #articleList }}
+				<article id="post-{{&id}}" class="post-{{&id}} post type-post status-publish format-standard has-post-thumbnail hentry category-4">
+					<header class="entry-header">
+						<h2 class="entry-title">
+							<a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
+						</h2>
+					</header>
+					<!-- .entry-header -->
+					<div class="entry-summary">
+						<div class="excerpt-thumb">
+							<a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="bookmark">
+								<img width="200" height="112" src="{{ &img }}" class="alignleft wp-post-image" alt="" loading="lazy" />
+							</a>
+						</div>
+						<p>{{ &contentText }} ...
+							<span class="read-more">
+								<a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
+							</span>
+						</p>
+					</div>
+					<!-- .entry-summary -->
+					<footer class="entry-meta">
+						<span>分类:
+						{{ #category }}
+							<a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
+						{{ /category }}
+						</span>
+						<span>标签：
+						{{ #tags }}
+							<a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
+						{{ /tags }}
+						</span>
+						<span class="alignright">{{ &createDate10 }}</span>
+					</footer>
+					<!-- .entry-meta -->
+				</article>
+				{{ /articleList }}
+	
+				<nav id="nav-below" class="navigation" role="navigation">
+					<div class="assistive-text">文章分页</div>
+					{{ #pageNewer }}
+					<div class="nav-previous alignleft">
+						<a href="{{ &url }}">
+							<span class="meta-nav">←</span>上一页
+						</a>
+					</div>
+					{{ /pageNewer }}
+					
+					<div class="nav-next alignright">
+					{{ #pageOlder }}
+						<a href="{{ &url }}">下一页
+							<span class="meta-nav">→</span>
+						</a>
+					{{ /pageOlder }}
+					</div>
+				</nav>
+				{{ /articleList.length }}
+				<!-- #nav-below .navigation -->
+			</div>
+		</div>
+		<!-- #primary -->
+	</div>
+	<!-- #main .wrapper -->
+	
+</body>
+</html>
