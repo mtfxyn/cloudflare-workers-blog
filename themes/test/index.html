@@ -26,25 +26,25 @@
 
 </head>
 <body>
-     <h1 class="title">
+	<h1 class="title">
 		mtfxyn's Blog
-	 </h1>
+	</h1>
 	
 	
 	
 	
 	
 	
-	<div id="content" role="main">
-                {{ #articleList.length }}
-                {{ #articleList }}
-                <article id="post-{{&id}}">
-                    <header class="entry-header">
-                        <h2 class="entry-title">
-                            <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
-                        </h2>
-                    </header>
-                    <div class="entry-summary">
+	<div>
+	{{ #articleList.length }}
+    {{ #articleList }}
+		<article id="post-{{&id}}">
+            <header class="entry-header">
+                <h2 class="entry-title">
+                    <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
+                </h2>
+            </header>
+            <div class="entry-summary">
                         <div class="excerpt-thumb">
                             <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="bookmark">
                                 <img width="200" height="112" src="{{ &img }}" alt="" />
@@ -55,8 +55,8 @@
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
                         </p>
-                    </div>
-                    <footer class="entry-meta">
+            </div>
+            <footer class="entry-meta">
                         <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
@@ -68,14 +68,13 @@
                         {{ /tags }}
                         </span>
                         <span>{{ &createDate10 }}</span>
-                    </footer>
-                </article>
-                {{ /articleList }}
-
-                <nav id="nav-below" class="navigation" role="navigation">
-                    <div>文章分页</div>
+			</footer>
+        </article>
+        {{ /articleList }}
+		<nav id="nav-below" class="navigation" role="navigation">
+            <div>文章分页</div>
                     {{ #pageNewer }}
-                    <div class="nav-previous">
+            <div class="nav-previous">
                         <a href="{{ &url }}">
                             <span>←</span>上一页
                         </a>
@@ -89,10 +88,9 @@
                         </a>
                     {{ /pageOlder }}
                     </div>
-                </nav>
-                {{ /articleList.length }}
-            </div>
-      
-  
+        </nav>
+        {{ /articleList.length }}
+
+	</div>
 </body>
 </html>
