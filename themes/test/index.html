@@ -53,52 +53,47 @@
                         <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
                     </h2>
                 </header>
-                <div class="entry-summary">
-                    <div class="excerpt-thumb">
-                        <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="bookmark">
-                            <img width="200" height="112" src="{{ &img }}" alt="" />
-                        </a>
-                    </div>
-                    <p>{{ &contentText }} ...
-                        <span class="read-more">
+            </div>
+            <p>{{ &contentText }} ...
+                <span class="read-more">
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
-                    </p>
-                </div>
-                <footer class="entry-meta">
-                    <span>分类:
+            </p>
+    </div>
+    <footer class="entry-meta">
+        <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
                         {{ /category }}
                         </span>
-                    <span>标签：
+        <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
                         {{ /tags }}
                         </span>
-                    <span>{{ &createDate10 }}</span>
-                </footer>
-            </div>
-        </article>
-        {{ /articleList }}
-        <nav id="nav-below" class="navigation" role="navigation">
-            <div>文章分页</div>
-            {{ #pageNewer }}
-            <div class="nav-previous">
-                <a href="{{ &url }}">
-                    <span>←</span>上一页
-                </a>
-            </div>
-            {{ /pageNewer }}
+        <span>{{ &createDate10 }}</span>
+    </footer>
+    </div>
+    </article>
+    {{ /articleList }}
+    <nav id="nav-below" class="navigation" role="navigation">
+        <div>文章分页</div>
+        {{ #pageNewer }}
+        <div class="nav-previous">
+            <a href="{{ &url }}">
+                <span>←</span>上一页
+            </a>
+        </div>
+        {{ /pageNewer }}
 
-            <div class="nav-next">
-                {{ #pageOlder }}
-                <a href="{{ &url }}">下一页
+        <div class="nav-next">
+            {{ #pageOlder }}
+            <a href="{{ &url }}">下一页
                             <span>→</span>
                         </a> {{ /pageOlder }}
-            </div>
-        </nav>
-        {{ /articleList.length }}
+        </div>
+    </nav>
+    {{ /articleList.length }}
 
     </div>
 </body>
