@@ -45,21 +45,20 @@
 
 
 
-    <div>
+    <div class="all">
         {{ #articleList.length }} {{ #articleList }}
         <article id="post-{{&id}}">
-            <div class="all">
-                <header class="entry-header">
-                    <h2 class="entry-title">
-                        <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
-                    </h2>
-                </header>
-                <p>{{ &contentText }} ...
-                    <span class="read-more">
+
+            <header class="entry-header">
+                <h2 class="entry-title">
+                    <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
+                </h2>
+            </header>
+            <p>{{ &contentText }} ...
+                <span class="read-more">
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
-                </p>
-            </div>
+            </p>
             <footer class="entry-meta">
                 <span>分类:
                         {{ #category }}
