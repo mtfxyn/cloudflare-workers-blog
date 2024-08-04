@@ -1,103 +1,124 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>文章列表</title>
-	<style>
-
-		a{
-			background: #41A5EE;
-			border-radius: 1em;
-		
-		}
-	
-		.title{
-			text-align: center;
-			font-weight: 300;
-			color: #333;
-		}
-	
-		body{
-			background-image: url("https://cfcdn.mtfxyn.top/file/cc5acb519040ea62fd3c2.png");
-			background-position: center;
-			background-size: cover;
-			background-attachment: fixed;
-		}
-	
-	
-	
-	</style>
+    <style>
+        a {
+            background: #41A5EE;
+            border-radius: 1em;
+        }
+        
+        .title {
+            text-align: center;
+            font-weight: 300;
+            color: #333;
+        }
+        
+        body {
+            background-image: url("https://cfcdn.mtfxyn.top/file/cc5acb519040ea62fd3c2.png");
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        article {
+            /* 关键词值 */
+            backdrop-filter: none;
+            /* 指向 SVG 滤镜的 URL */
+            backdrop-filter: url(commonfilters.svg#filter);
+            /* <filter-function> 滤镜函数值 */
+            backdrop-filter: blur(2px);
+            backdrop-filter: brightness(60%);
+            backdrop-filter: contrast(40%);
+            backdrop-filter: drop-shadow(4px 4px 10px blue);
+            backdrop-filter: grayscale(30%);
+            backdrop-filter: hue-rotate(120deg);
+            backdrop-filter: invert(70%);
+            backdrop-filter: opacity(20%);
+            backdrop-filter: sepia(90%);
+            backdrop-filter: saturate(80%);
+            /* 多重滤镜 */
+            backdrop-filter: url(filters.svg#filter) blur(4px) saturate(150%);
+            /* 全局值 */
+            backdrop-filter: inherit;
+            backdrop-filter: initial;
+            backdrop-filter: revert;
+            backdrop-filter: unset;
+        }
+    </style>
 
 
 
 </head>
+
 <body>
-	<h1 class="title">
-		mtfxyn's Blog
-	</h1>
-	
-	
-	
-	
-	
-	
-	<div>
-	{{ #articleList.length }}
-    {{ #articleList }}
-		<article id="post-{{&id}}">
+    <h1 class="title">
+        mtfxyn's Blog
+    </h1>
+
+
+
+
+
+
+    <div>
+        {{ #articleList.length }} {{ #articleList }}
+        <article id="post-{{&id}}">
             <header class="entry-header">
                 <h2 class="entry-title">
                     <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
                 </h2>
             </header>
             <div class="entry-summary">
-                        <div class="excerpt-thumb">
-                            <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="bookmark">
-                                <img width="200" height="112" src="{{ &img }}" alt="" />
-                            </a>
-                        </div>
-                        <p>{{ &contentText }} ...
-                            <span class="read-more">
+                <div class="excerpt-thumb">
+                    <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="bookmark">
+                        <img width="200" height="112" src="{{ &img }}" alt="" />
+                    </a>
+                </div>
+                <p>{{ &contentText }} ...
+                    <span class="read-more">
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
-                        </p>
+                </p>
             </div>
             <footer class="entry-meta">
-                        <span>分类:
+                <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
                         {{ /category }}
                         </span>
-                        <span>标签：
+                <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
                         {{ /tags }}
                         </span>
-                        <span>{{ &createDate10 }}</span>
-			</footer>
+                <span>{{ &createDate10 }}</span>
+            </footer>
         </article>
         {{ /articleList }}
-		<nav id="nav-below" class="navigation" role="navigation">
+        <nav id="nav-below" class="navigation" role="navigation">
             <div>文章分页</div>
-                    {{ #pageNewer }}
+            {{ #pageNewer }}
             <div class="nav-previous">
-                        <a href="{{ &url }}">
-                            <span>←</span>上一页
-                        </a>
-                    </div>
-                    {{ /pageNewer }}
-                    
-                    <div class="nav-next">
-                    {{ #pageOlder }}
-                        <a href="{{ &url }}">下一页
+                <a href="{{ &url }}">
+                    <span>←</span>上一页
+                </a>
+            </div>
+            {{ /pageNewer }}
+
+            <div class="nav-next">
+                {{ #pageOlder }}
+                <a href="{{ &url }}">下一页
                             <span>→</span>
-                        </a>
-                    {{ /pageOlder }}
-                    </div>
+                        </a> {{ /pageOlder }}
+            </div>
         </nav>
         {{ /articleList.length }}
 
-</div>
+    </div>
 </body>
+
 </html>
