@@ -60,21 +60,22 @@
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
                 </p>
-                <footer class="entry-meta">
-                    <span>分类:
+            </div>
+            <footer class="entry-meta">
+                <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
                         {{ /category }}
                         </span>
-                    <span>标签：
+                <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
                         {{ /tags }}
                         </span>
-                    <span>{{ &createDate10 }}</span>
-                </footer>
+                <span>{{ &createDate10 }}</span>
+            </footer>
 
-            </div>
+
     </div>
     </article>
     {{ /articleList }}
