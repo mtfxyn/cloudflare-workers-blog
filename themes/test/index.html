@@ -24,7 +24,7 @@
             background-attachment: fixed;
         }
         
-        .mohu {
+        .all {
             /* 关键词值 */
             backdrop-filter: none;
             /* 指向 SVG 滤镜的 URL */
@@ -66,37 +66,39 @@
 
     <div>
         {{ #articleList.length }} {{ #articleList }}
-        <article id="post-{{&id}}" class="mohu">
-            <header class="entry-header">
-                <h2 class="entry-title">
-                    <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
-                </h2>
-            </header>
-            <div class="entry-summary">
-                <div class="excerpt-thumb">
-                    <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="bookmark">
-                        <img width="200" height="112" src="{{ &img }}" alt="" />
-                    </a>
-                </div>
-                <p>{{ &contentText }} ...
-                    <span class="read-more">
+        <article id="post-{{&id}}">
+            <div class="all">
+                <header class="entry-header">
+                    <h2 class="entry-title">
+                        <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
+                    </h2>
+                </header>
+                <div class="entry-summary">
+                    <div class="excerpt-thumb">
+                        <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="bookmark">
+                            <img width="200" height="112" src="{{ &img }}" alt="" />
+                        </a>
+                    </div>
+                    <p>{{ &contentText }} ...
+                        <span class="read-more">
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
-                </p>
-            </div>
-            <footer class="entry-meta">
-                <span>分类:
+                    </p>
+                </div>
+                <footer class="entry-meta">
+                    <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
                         {{ /category }}
                         </span>
-                <span>标签：
+                    <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
                         {{ /tags }}
                         </span>
-                <span>{{ &createDate10 }}</span>
-            </footer>
+                    <span>{{ &createDate10 }}</span>
+                </footer>
+            </div>
         </article>
         {{ /articleList }}
         <nav id="nav-below" class="navigation" role="navigation">
