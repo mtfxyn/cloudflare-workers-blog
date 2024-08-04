@@ -46,33 +46,35 @@
 
 
 
-    <div class="all">
+    <div>
         {{ #articleList.length }} {{ #articleList }}
         <article id="post-{{&id}}">
-
-            <header class="entry-header">
-                <h2 class="entry-title">
-                    <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
-                </h2>
-            </header>
-            <p>{{ &contentText }} ...
-                <span class="read-more">
+            <div class="all">
+                <header class="entry-header">
+                    <h2 class="entry-title">
+                        <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
+                    </h2>
+                </header>
+                <p>{{ &contentText }} ...
+                    <span class="read-more">
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
-            </p>
-            <footer class="entry-meta">
-                <span>分类:
+                </p>
+                <footer class="entry-meta">
+                    <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
                         {{ /category }}
                         </span>
-                <span>标签：
+                    <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
                         {{ /tags }}
                         </span>
-                <span>{{ &createDate10 }}</span>
-            </footer>
+                    <span>{{ &createDate10 }}</span>
+                </footer>
+
+            </div>
     </div>
     </article>
     {{ /articleList }}
