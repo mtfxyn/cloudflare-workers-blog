@@ -53,26 +53,25 @@
                         <a href="/article/{{&id}}/{{&link}}.html" title="{{ &title }}" rel="{{ &title }}">{{ &title }}</a>
                     </h2>
                 </header>
-            </div>
-            <p>{{ &contentText }} ...
-                <span class="read-more">
+                <p>{{ &contentText }} ...
+                    <span class="read-more">
                                 <a href="/article/{{&id}}/{{&link}}.html">继续阅读 &raquo;</a>
                             </span>
-            </p>
-    </div>
-    <footer class="entry-meta">
-        <span>分类:
+                </p>
+            </div>
+            <footer class="entry-meta">
+                <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
                         {{ /category }}
                         </span>
-        <span>标签：
+                <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
                         {{ /tags }}
                         </span>
-        <span>{{ &createDate10 }}</span>
-    </footer>
+                <span>{{ &createDate10 }}</span>
+            </footer>
     </div>
     </article>
     {{ /articleList }}
