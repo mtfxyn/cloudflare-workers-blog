@@ -1,43 +1,37 @@
-> 这是一个运行在cloudflare workers 上的博客程序,使用 cloudflare KV作为数据库,无其他依赖.
-兼容静态博客的速度,以及动态博客的灵活性,方便搭建不折腾.很稳定
-演示地址: [https://blog.gezhong.vip](https://blog.gezhong.vip "cf-blog演示站点")
+# cloudflare-workers-blog
 
-### TG 讨论群: [@CloudflareBlog](https://t.me/cloudflareblog "")
-# 主要特点
-* 使用workers提供的KV作为数据库
-* 使用cloudflare缓存html来降低KV的读写
-* 所有html页面均为缓存,可达到静态博客的速度
-* 使用KV作为数据库,可达到wordpress的灵活性
-* 后台使用markdown语法,方便快捷
-* 一键发布(页面重构+缓存清理)
+#### 介绍
+cloudflare-workers-blog
 
-# 承载能力
- * KV基本不存在瓶颈,因为使用了缓存,读写很少
- * 唯一瓶颈是 workers的日访问量10w,大约能承受2万IP /日
- * 文章数:1G存储空间,几万篇问题不大
-
-# 部署步骤
-  这里没有实时预览真难受,一系列坑会慢慢填到博客,敬请关注 [https://blog.gezhong.vip](https://blog.gezhong.vip "")
-
-# 更新日志
-
-> [持续更新地址https://blog.gezhong.vip/article/009000/update-log.html](https://blog.gezhong.vip/article/009000/update-log.html "更新日志")
-  
-## 最近更新(2020-12-31)
-* 2020-12-31:加入sitemap.xml
-* 2020-12-24:本次更新,主要针对seo和阅读次数,以及多项细节优化
+#### 软件架构
+软件架构说明
 
 
+#### 安装教程
+
+1.  xxxx
+2.  xxxx
+3.  xxxx
+
+#### 使用说明
+
+1.  xxxx
+2.  xxxx
+3.  xxxx
+
+#### 参与贡献
+
+1.  Fork 本仓库
+2.  新建 Feat_xxx 分支
+3.  提交代码
+4.  新建 Pull Request
 
 
-### 前端演示:[https://blog.gezhong.vip](https://blog.gezhong.vip "演示站点")
-![](https://s3.ax1x.com/2020/12/22/rrP81S.png)
+#### 特技
 
-### 后端演示:
-![](https://s3.ax1x.com/2020/12/22/rrAWrD.png)
-
-## 捐赠
-
-如果你觉的本项目帮到你了，还请资持一下作者
-
-* [捐赠](https://afdian.net/@zhaopp "爱发电")  
+1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
+2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
+3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
+4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
+5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
+6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
