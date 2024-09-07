@@ -34,7 +34,7 @@ body {
 }
 
 .all {
-    background-color: #F6F7F8;
+    background-color: #ffffff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 1em;
     /*  圆角 */
@@ -47,7 +47,7 @@ body {
     flex-direction: column;
     align-items: center;
     bottom: 0;
-    background-color: #F6F7F8;
+    background-color: white;
     color: #84898F;
     border-radius: 10px 10px 0px 0px;
     margin-left: 20px;
@@ -73,5 +73,6 @@ a {
     min-height: 100vh;
     flex-direction: column;
     border-radius: 10px 10px 0px 0px;
-    background-color: #ffffff;
+    background-color: #f7f8fa;
+    ;
 }
