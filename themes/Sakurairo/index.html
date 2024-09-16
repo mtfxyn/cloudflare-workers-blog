@@ -1192,12 +1192,13 @@
                                     </a>
                                     <div class="post-meta">
                                         <span><i class="fa-regular fa-folder"></i>
-					                        <a href="/category/{{&.}}">{{&.}}</a>
+                                            {{ #category }}
+                                            <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
+                                        {{ /category }}
 					                    </span>
                                     </div>
                                     <div class="float-content">
-                                        <div class="ai-excerpt-tip"><i class="fa-regular fa-lightbulb"></i>内容预览</div>
-                                        {{ &contentText }} ...</div>
+                                        <div class="ai-excerpt-tip"><i class="fa-regular fa-lightbulb"></i>内容预览</div>{{ &contentText }} ...</div>
                                 </div>
                             </div>
                         </article>
