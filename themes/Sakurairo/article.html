@@ -1,235 +1,1628 @@
 <!DOCTYPE html>
-<!--[if IE 7]>
-	<html class="ie ie7" lang="zh-CN">
-	<![endif]-->
-	<!--[if IE 8]>
-		<html class="ie ie8" lang="zh-CN">
-		<![endif]-->
-		<!--[if !(IE 7) | !(IE 8) ]>
-			<!-->
-			<html lang="zh-CN">
-			<!--<![endif]-->
-			<head>
-				<meta charset="UTF-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="profile" href="http://gmpg.org/xfn/11" />
-				<link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico" />
-				<link rel="Shortcut Icon" href="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/favicon.ico">
-				<title>{{ &articleSingle.title }} - {{ &OPT.siteName }}</title>
-				<meta name="keywords" content="{{ &articleSingle.category }},{{ &articleSingle.tags }}" />
-				<meta name="description" content="{{ &OPT.siteDescription }}" />
-				<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-				<link rel="dns-prefetch" href="//s.w.org" />
-				<script type="text/javascript">window._wpemojiSettings = {
-						"baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/",
-						"ext": ".png",
-						"svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/",
-						"svgExt": ".svg",
-						"source": {
-							"concatemoji": "https:\/\/cdn.jsdelivr.net\/gh\/gdtool\/zhaopp\/cfblog\/wp-emoji-release.min.js?ver=5.6"
-						}
-					}; !
-					function(e, a, t) {
-						var r, n, o, i, p = a.createElement("canvas"),
-						s = p.getContext && p.getContext("2d");
-						function c(e, t) {
-							var a = String.fromCharCode;
-							s.clearRect(0, 0, p.width, p.height),
-							s.fillText(a.apply(this, e), 0, 0);
-							var r = p.toDataURL();
-							return s.clearRect(0, 0, p.width, p.height),
-							s.fillText(a.apply(this, t), 0, 0),
-							r === p.toDataURL()
-						}
-						function l(e) {
-							if (!s || !s.fillText) return ! 1;
-							switch (s.textBaseline = "top", s.font = "600 32px Arial", e) {
-							case "flag":
-								return ! c([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) && (!c([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !c([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]));
-							case "emoji":
-								return ! c([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212])
-							}
-							return ! 1
-						}
-						function d(e) {
-							var t = a.createElement("script");
-							t.src = e,
-							t.defer = t.type = "text/javascript",
-							a.getElementsByTagName("head")[0].appendChild(t)
-						}
-						for (i = Array("flag", "emoji"), t.supports = {
-							everything: !0,
-							everythingExceptFlag: !0
-						},
-						o = 0; o < i.length; o++) t.supports[i[o]] = l(i[o]),
-						t.supports.everything = t.supports.everything && t.supports[i[o]],
-						"flag" !== i[o] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[i[o]]);
-						t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag,
-						t.DOMReady = !1,
-						t.readyCallback = function() {
-							t.DOMReady = !0
-						},
-						t.supports.everything || (n = function() {
-							t.readyCallback()
-						},
-						a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange",
-						function() {
-							"complete" === a.readyState && t.readyCallback()
-						})), (r = t.source || {}).concatemoji ? d(r.concatemoji) : r.wpemoji && r.twemoji && (d(r.twemoji), d(r.wpemoji)))
-					} (window, document, window._wpemojiSettings);</script>
-				<style type="text/css">img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 .07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; }</style>
-				<link rel="stylesheet" id="wp-block-library-css" href="https://cdn.jsdelivr.net/gh/WordPress/WordPress@5.5.3/wp-includes/css/dist/block-library/style.min.css?ver=5.6" type="text/css" media="all" />
-				<style id="md-style-inline-css" type="text/css">.gfm-task-list { border: 1px solid transparent; list-style-type: none; } .gfm-task-list input { margin-right: 10px !important; } .copy-button { cursor: pointer; border: 0; font-size: 12px; text-transform: uppercase; font-weight: 500; padding: 3px 6px 3px 6px; background-color: rgba(255, 255, 255, 0.6); position: absolute; overflow: hidden; top: 5px; right: 5px; border-radius: 3px; } .copy-button:before { content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 3px; background-size: contain; background-image: url("data:image/svg+xml,%3Csvg version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' x=\'0px\' y=\'0px\' width=\'16px\' height=\'16px\' viewBox=\'888 888 16 16\' enable-background=\'new 888 888 16 16\' xml:space=\'preserve\'%3E %3Cpath fill=\'%23333333\' d=\'M903.143,891.429c0.238,0,0.44,0.083,0.607,0.25c0.167,0.167,0.25,0.369,0.25,0.607v10.857 c0,0.238-0.083,0.44-0.25,0.607s-0.369,0.25-0.607,0.25h-8.571c-0.238,0-0.44-0.083-0.607-0.25s-0.25-0.369-0.25-0.607v-2.571 h-4.857c-0.238,0-0.44-0.083-0.607-0.25s-0.25-0.369-0.25-0.607v-6c0-0.238,0.06-0.5,0.179-0.786s0.262-0.512,0.428-0.679 l3.643-3.643c0.167-0.167,0.393-0.309,0.679-0.428s0.547-0.179,0.786-0.179h3.714c0.238,0,0.44,0.083,0.607,0.25 c0.166,0.167,0.25,0.369,0.25,0.607v2.929c0.404-0.238,0.785-0.357,1.143-0.357H903.143z M898.286,893.331l-2.67,2.669h2.67V893.331 z M892.571,889.902l-2.669,2.669h2.669V889.902z M894.321,895.679l2.821-2.822v-3.714h-3.428v3.714c0,0.238-0.083,0.441-0.25,0.607 s-0.369,0.25-0.607,0.25h-3.714v5.714h4.571v-2.286c0-0.238,0.06-0.5,0.179-0.786C894.012,896.071,894.155,895.845,894.321,895.679z M902.857,902.857v-10.286h-3.429v3.714c0,0.238-0.083,0.441-0.25,0.607c-0.167,0.167-0.369,0.25-0.607,0.25h-3.714v5.715H902.857z\' /%3E %3C/svg%3E"); background-repeat: no-repeat; position: relative; top: 3px; } pre { position: relative; } pre:hover .copy-button { background-color: rgba(255, 255, 255, 0.9); }</style>
-				<link rel="stylesheet" id="themonic-fonts-css" href="https://fonts.googleapis.com/css?family=Ubuntu%3A400%2C700&amp;subset=latin%2Clatin-ext" type="text/css" media="all" />
-				<link rel="stylesheet" id="themonic-style-css" href="https://cdn.jsdelivr.net/gh/gdtool/cloudflare-workers-blog@master/themes/default/style.css" type="text/css" media="all" />
-				<link rel="stylesheet" id="custom-style-css" href="https://cdn.jsdelivr.net/wp/themes/iconic-one/2.1.8/custom.min.css?ver=5.6" type="text/css" media="all" />
-				<meta name="generator" content="WordPress 5.6" />
-				<style type="text/css" id="wp-custom-css">@media (max-width: 768px) { #secondary { display:none !important; } #menu-top{ display:none !important; } .site-content { float: left; width: 92%; padding: 30px 2% 0 1%; } .site-description{ display:none !important; } .io-title-description { display: inline-block; margin: 17px 0; padding: 0px 0; float: none; } .wrapper { border: 1px solid #16a1e7 !important; } }</style>
-				<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.3.2/styles/tomorrow-night-bright.min.css">
-				<script src='https://cdn.staticfile.org/highlight.js/10.3.2/highlight.min.js'></script>
-				{{ &OPT.codeBeforHead }}
-			</head>
-			<body class="home blog logged-in custom-font-enabled single-author hfeed">
-				<div id="page" class="site">
-					<header id="masthead" class="site-header" role="banner">
-						<div class="io-title-description">
-							<a href="/" title="{{ &OPT.siteName }}" rel="home">{{ &OPT.siteName }}</a>
-							<br ...="" />
-							<a class="site-description">{{ &OPT.siteDescription }}</a></div>
-						<nav id="site-navigation" class="themonic-nav" role="navigation">
-							<a class="assistive-text" href="#main" title="Skip to content">Skip to content</a>
-							<ul id="menu-top" class="nav-menu">
-								{{ #widgetMenuList }}
-									<li id="menu-item-211" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-211">
-										<a href="{{ &url }}">{{ &title }}</a>
-									</li>
-								{{ /widgetMenuList }}
-							</ul>
-						</nav>
-						<!-- #site-navigation -->
-						<div class="clear"></div>
-					</header>
-					<!-- #masthead -->
-					<div id="main" class="wrapper">
-						<div id="primary" class="site-content">
+<!-- 
+            ◢＼　 ☆　　 ／◣
+    　  　∕　　﹨　╰╮∕　　﹨
+    　  　▏　　～～′′～～ 　｜
+    　　  ﹨／　　　　　　 　＼∕
+    　 　 ∕ 　　●　　　 ●　＼
+      ＝＝　○　∴·╰╯　∴　○　＝＝
+    　    ╭──╮　　　　　╭──╮
+  ╔═ ∪∪∪═Mashiro&Hitomi═∪∪∪═╗
+-->
+<html lang="zh-Hans">
 
-							<div id="content" role="main">
-								<article id="post-{{ &articleSingle.id }}" class="post-{{ &articleSingle.id }} post type-post status-publish format-standard hentry category-4">
-									<header class="entry-header">
-										<h1 class="entry-title">{{ &articleSingle.title }}</h1>
-										<div class="below-title-meta">
-											<div class="adt">By
-												<span class="vcard author">
-													<span class="fn">
-														<a href="#" title="由admin发布" rel="author">admin</a></span>
-												</span>
-												<span class="meta-sep">|</span>
-												<span class="date updated">{{ &articleSingle.createDate10 }}</span></div>
-											<div class="adt-comment">
-												<span id="{{ &articleSingle.url }}" class="leancloud_visitors">
-													<em class="post-meta-item-text">{{ &OPT.otherCodeA }}</em>
-													<i class="leancloud-visitors-count"></i>
-												</span>
-											</div>
-										</div>
-										<!-- below title meta end -->
-									</header>
-									<!-- .entry-header -->
-									<div class="entry-content">
-										{{ &articleSingle.contentHtml }}
-									</div>
-									<!-- .entry-content -->
-									<footer class="entry-meta">
-										<span>分类:
-											{{ #articleSingle.category }}
-												<a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
-											{{ /articleSingle.category }}
-										</span>	
-										<span>标签：
-											{{ #articleSingle.tags }}
-												<a href="/tags/{{&.}}" rel="tag">{{&.}} </a> 
-											{{ /articleSingle.tags }}
+<head>
+    <meta name="theme-color">
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" media="all" />
+    <link rel="shortcut icon" href="" />
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <title>Sakurairo 主题的这三年——关于过去、现在和未来 &#8211; 明日が来ると</title>
+    <meta name='robots' content='max-image-preview:large' />
+    <style id='classic-theme-styles-inline-css' type='text/css'>
+        /*! This file is auto-generated */
+        
+        .wp-block-button__link {
+            color: #fff;
+            background-color: #32373c;
+            border-radius: 9999px;
+            box-shadow: none;
+            text-decoration: none;
+            padding: calc(.667em + 2px) calc(1.333em + 2px);
+            font-size: 1.125em
+        }
+        
+        .wp-block-file__button {
+            background: #32373c;
+            color: #fff;
+            text-decoration: none
+        }
+    </style>
+    <style id='global-styles-inline-css' type='text/css'>
+         :root {
+            --wp--preset--aspect-ratio--square: 1;
+            --wp--preset--aspect-ratio--4-3: 4/3;
+            --wp--preset--aspect-ratio--3-4: 3/4;
+            --wp--preset--aspect-ratio--3-2: 3/2;
+            --wp--preset--aspect-ratio--2-3: 2/3;
+            --wp--preset--aspect-ratio--16-9: 16/9;
+            --wp--preset--aspect-ratio--9-16: 9/16;
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+            --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+        }
+        
+         :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+        
+         :where(.is-layout-grid) {
+            gap: 0.5em;
+        }
+        
+        body .is-layout-flex {
+            display: flex;
+        }
+        
+        .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .is-layout-flex> :is(*, div) {
+            margin: 0;
+        }
+        
+        body .is-layout-grid {
+            display: grid;
+        }
+        
+        .is-layout-grid> :is(*, div) {
+            margin: 0;
+        }
+        
+         :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+        
+         :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+        
+         :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+        
+         :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+        
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+        
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+        
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+        
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+        
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+        
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+        
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+        
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+        
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+        
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+        
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+        
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+        
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+        
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+        
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+        
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+        
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+        
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+        
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+        
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+        
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+        
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+        
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+        
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+        
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+        
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+        
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+        
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+        
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+        
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+        
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+        
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+        
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+        
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+        
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+        
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+        
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+        
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+        
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+        
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+        
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+        
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+        
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+        
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+        
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+        
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+        
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+        
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+        
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+        
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+        
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+        
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+        
+         :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+        
+         :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+        
+         :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+        
+         :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+        
+         :root :where(.wp-block-pullquote) {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+    </style>
+    <link rel='stylesheet' id='wpo_min-header-0-css' href='https://kiseki.blog/wp-content/cache/wpo-minify/1725440312/assets/wpo-minify-header-ebfb1e54.min.css' type='text/css' media='all' />
+    <link rel="https://api.w.org/" href="https://kiseki.blog/wp-json/" />
+    <link rel="alternate" title="JSON" type="application/json" href="https://kiseki.blog/wp-json/wp/v2/posts/19" />
+    <link rel="canonical" href="https://kiseki.blog/2022/11/28/sakurairo-theme-of-these-three-years-about-the-past-present-and-future/" />
+    <link rel='shortlink' href='https://kiseki.blog/?p=19' />
+    <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://kiseki.blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%2F" />
+    <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://kiseki.blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%2F&#038;format=xml"
+    />
+    <link rel="manifest" href="https://kiseki.blog/wp-json/wp/v2/web-app-manifest">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
-										</span>
-									</footer>
-									<!-- .entry-meta -->
-								</article>
-								<!-- #post -->
-								<nav class="nav-single">
-									<div class="assistive-text">Post navigation</div>
-									<span class="nav-previous">
-										{{ #articleNewer }}
-										<a href="{{ &url }}" rel="prev">
-											<span class="meta-nav">←</span>{{ &title }}</a>
-										{{ /articleNewer }}
-									</span>
-									<span class="nav-next">
-										{{ #articleOlder }}
-										<a href="{{ &url }}" rel="next">{{ &title }}
-											<span class="meta-nav">→</span></a>
-										{{ /articleOlder }}
-									</span>
-								</nav>
-								<!-- .nav-single -->
-								{{ &OPT.commentCode }}
-								<!-- #comments .comments-area -->
-							</div>
-							<!-- #上面俩,二选一 -->
-						</div>
-						<!-- #primary -->
-						<div id="secondary" class="widget-area" role="complementary">
-							<aside id="recent-posts-2" class="widget widget_recent_entries">
-								<p class="widget-title">近期文章</p>
-								<ul>
-									{{ #widgetRecentlyList }}
-									<li><a href="{{ &url }}">{{ &title }}</a></li>
-									{{ /widgetRecentlyList }}
-								</ul>
-							</aside>
-							<aside id="categories-4" class="widget widget_categories">
-								<p class="widget-title">分类目录</p>
-								<ul>
-									{{ #widgetCategoryList }}
-									<li class="cat-item cat-item-5"><a href="/category/{{&.}}">{{&.}}</a></li>
-									{{ /widgetCategoryList }}
-								</ul>
-							</aside>
-							<aside id="tag_cloud-2" class="widget widget_tag_cloud">
-								<p class="widget-title">标签云</p>
-								<div class="tagcloud">
-								
-									{{ #widgetTagsList }}
-									<a href="/tags/{{&.}}" class="tag-cloud-link tag-link-18 tag-link-position-3" style="font-size: 8pt;">{{&.}}</a>
-									{{ /widgetTagsList }}
+    <link rel="apple-touch-startup-image" href="https://kiseki.blog/wp-content/uploads/2023/03/cropped-site-logo-1-192x192.png">
 
-								</div>
-							</aside>
-							<aside id="meta-2" class="widget widget_meta">
-								<p class="widget-title">链接</p>
-								<ul>
-									<li><a href="/admin/">管理站点</a></li>
-									{{ #widgetLinkList }}
-									<li><a href="{{ &url }}">{{ &title }}</a></li>
-									{{ /widgetLinkList }}
-								</ul>
-							</aside>
-							{{ &OPT.widgetOther }}
-						</div>
-						<!-- #secondary -->
-					</div>
-					<!-- #main .wrapper -->
-					<!-- #colophon -->
-					<div class="site-wordpress">{{ &OPT.copyRight }}</div>
-					<!-- .site-info -->
-					<div class="clear"></div>
-				</div>
-				<!-- #page -->
-				<script type="text/javascript" src="https://cdn.jsdelivr.net/wp/themes/iconic-one/2.1.8/js/selectnav.min.js?ver=1.0" id="themonic-mobile-navigation-js"></script>
-				<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/WordPress/WordPress@5.6/wp-includes/js/clipboard.min.js?ver=5.6" id="clipboard-js"></script>
-				<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/gdtool/zhaopp/cfblog/wp-embed.min.js?ver=5.6" id="wp-embed-js"></script>
-				<script>hljs.initHighlightingOnLoad(); //代码高亮
-					</script>
-				{{ &OPT.codeBeforBody }}
-			</body>
-			
-			</html>
+    <meta name="apple-mobile-web-app-title" content="明日が来ると">
+    <meta name="application-name" content="明日が来ると">
+    <style>
+        .site-top .lower nav {
+            display: block !important;
+        }
+        
+         :root {
+            --theme-skin: #505050;
+            --theme-skin-matching: #a4cdf6;
+            --infor_bar_bgcolor: rgba(255, 255, 255, 0.6);
+            --style_menu_selection_radius: 15px;
+            --post_list_matching_color: #a4cdf6;
+            --load_nextpage_svg: url("https://s.nmxc.ltd/sakurairo_vision/@2.5/load_svg/ball.svg");
+            --style_menu_radius: 10px;
+            --post-list-thumb: #e8e8e8;
+            --friend-link-shadow: #e8e8e8;
+            --friend-link-title: #ac354b;
+            --comment_area_matching: #6667ab;
+            --comment_area_shadow: #e8e8e8;
+            --shuoshuo_background_color1: rgba(164, 205, 246, 0.21);
+            --shuoshuo_background_color2: rgba(164, 205, 246, 0.6);
+            --inline_code_background_color: #F2F1F1;
+            --theme-skin-dark: #294aa4;
+            --global-font-weight: 400;
+            --theme-dm-background_transparency: 0.7;
+            --exhibition_area_matching_color: #a4cdf6;
+            --inline_code_background_color_in_dark_mode: #505050;
+        }
+        
+        .the-feature.from_left_and_right .info,
+        .the-feature.from_left_and_right .info h3 {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        /*白猫样式Logo*/
+        /*非全局色彩管理*/
+        
+        .post-date {
+            background-color: #a4cdf626;
+        }
+        
+        .center-text {
+            color: #FFF;
+            font-size: 80px;
+        }
+        
+        .Ubuntu-font,
+        .center-text {
+            font-family: ;
+        }
+        
+        .notice i,
+        .notice {
+            color: #ffffff;
+        }
+        
+        .notice {
+            border: 1px solid #E6E6E6;
+        }
+        
+        .entry-content th {
+            background-color: #505050
+        }
+        
+        .author-profile .desc {
+            font-family: 'Satisfy', cursive;
+        }
+        
+        .header-info {
+            font-family: 'Satisfy', cursive;
+            font-size: 18px;
+        }
+        
+        .entry-content p {
+            font-family: 'Zen Antique';
+        }
+        
+        span.linkss-title {
+            font-family: 'Zen Antique';
+        }
+        
+        #centerbg {
+            background: #0000;
+        }
+        /*预加载部分*/
+        /*深色模式*/
+        /*可变项目*/
+        /*深色模式控件透明度*/
+        
+        body.dark .header-info,
+        body.dark .header-shuo,
+        body.dark .top-social img {
+            color: #fff;
+            background: rgba(51, 51, 51, 0.7);
+        }
+        
+        body.dark .the-feature.from_left_and_right .info {
+            background-color: rgba(51, 51, 51, 0.7);
+        }
+        
+        body.dark .yya,
+        body.dark input[type=submit] {
+            background-color: rgba(38, 38, 38, 0.7) !important;
+        }
+        /*深色模式自定义颜色*/
+        
+        body.dark .headertop-down svg path {
+            fill: rgba(51, 51, 51, 0.8) !important;
+            transition: all 0.8s ease !important;
+        }
+        /*深色模式图像亮度*/
+        
+        body.dark img,
+        body.dark .highlight-wrap,
+        body.dark iframe,
+        body.dark .entry-content .aplayer,
+        body.dark .post-thumb video {
+            filter: brightness(0.8);
+        }
+        
+        @media (max-width: 1200px) {
+            body.dark .site-top .lower nav.navbar ul {
+                background: rgba(255, 255, 255, 0);
+            }
+        }
+        /*字体*/
+        
+        @font-face {
+            font-family: 'Persona';
+            src: url('https://kiseki.blog/wp-content/uploads/2023/03/p5.woff');
+        }
+        
+        @font-face {
+            font-family: 'yinghuayuluo';
+            src: url('https://cdn.jsdelivr.net/gh/Ukenn2112/UkennWeb@2.0/ttf/YingHuaYuLuo-subfont.woff2');
+        }
+        
+        .serif {
+            font-family: !important;
+            font-size: 15px;
+        }
+        
+        body {
+            font-family: !important;
+            font-size: 15px;
+        }
+        
+        .site-top ul li a,
+        .header-user-name,
+        .header-user-menu a {
+            font-family: Zen Antique !important;
+        }
+        
+        .site-title a {
+            font-family: '';
+        }
+        
+        .site-info,
+        .site-info a {
+            font-family: Satisfy !important;
+        }
+        
+        .skin-menu p {
+            font-family: Zen Antique !important;
+        }
+        
+        h1.main-title,
+        h1.fes-title {
+            font-family: Zen Antique;
+        }
+        
+        .header-info p,
+        .header-shuo p {
+            font-family: !important;
+            font-size: 16px;
+        }
+        
+        .cbp_tmtimeline>li .cbp_tmlabel {
+            font-family: Noto Serif SC !important;
+        }
+        
+        .post-list-thumb .post-title h3 {
+            font-size: 18px !important;
+        }
+        
+        .post-meta,
+        .post-meta a {
+            font-size: 12px !important;
+        }
+        
+        .pattern-center h1.cat-title,
+        .pattern-center h1.entry-title {
+            font-size: 40px;
+        }
+        
+        .pattern-center-sakura h1.cat-title,
+        .pattern-center-sakura h1.entry-title {
+            font-size: 40px !important;
+        }
+        
+        .single-center .single-header h1.entry-title {
+            font-size: 32px;
+        }
+        /*鼠标*/
+        
+        body {
+            cursor: url(), auto;
+        }
+        
+        .headertop-down,
+        #waifu #live2d,
+        .aplayer svg,
+        .aplayer.aplayer-narrow .aplayer-body,
+        .aplayer.aplayer-narrow .aplayer-pic,
+        #emotion-toggle,
+        .emoji-item,
+        .emotion-box,
+        .emotion-item,
+        .on-hover,
+        .tieba-container span,
+        #moblieGoTop,
+        #changskin {
+            cursor: url(), auto;
+        }
+        
+        a,
+        .ins-section .ins-section-header,
+        .font-family-controls button,
+        .menu-list li,
+        .ins-section .ins-search-item,
+        .ins-section .ins-search-item .ins-search-preview {
+            cursor: url(), auto;
+        }
+        
+        p,
+        .highlight-wrap code,
+        .highlight-wrap,
+        .hljs-ln-code .hljs-ln-line {
+            cursor: url(), auto;
+        }
+        
+        a:active {
+            cursor: url(), alias;
+        }
+        /*背景类*/
+        
+        .comment-respond textarea {
+            background-image: url();
+        }
+        
+        .search-form.is-visible {
+            background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/iloli.gif);
+        }
+        
+        .site-footer {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .wrapper {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .focusinfo .header-tou .signature {
+            font-family: 'Satisfy';
+            background: linear-gradient(to right, #C0C0C0, #FFFFFF, #C0C0C0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /*首页圆角设置*/
+        
+        .header-info,
+        .header-shuo {
+            border-radius: 10px;
+            grid-row: 1;
+            grid-column: 1;
+        }
+        
+        .focusinfo img {
+            border-radius: 15px;
+        }
+        
+        .focusinfo .header-tou img {
+            border-radius: 100px;
+        }
+        /*标题横线动画*/
+        /*标题动画*/
+        
+        .entry-title,
+        .single-center .entry-census a,
+        .entry-census,
+        .post-list p,
+        .p-time,
+        .feature {
+            -moz-animation: fadeInDown 2s;
+            -webkit-animation: fadeInDown 2s;
+            animation: fadeInDown 2s;
+        }
+        
+        @-moz-keyframes fadeInUp {
+            0% {
+                -moz-transform: translateY(200%);
+                transform: translateY(200%);
+                opacity: 0
+            }
+            50% {
+                -moz-transform: translateY(200%);
+                transform: translateY(200%);
+                opacity: 0
+            }
+            100% {
+                -moz-transform: translateY(0%);
+                transform: translateY(0%);
+                opacity: 1
+            }
+        }
+        
+        @-webkit-keyframes fadeInUp {
+            0% {
+                -webkit-transform: translateY(200%);
+                transform: translateY(200%);
+                opacity: 0
+            }
+            50% {
+                -webkit-transform: translateY(200%);
+                transform: translateY(200%);
+                opacity: 0
+            }
+            100% {
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+                opacity: 1
+            }
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                -moz-transform: translateY(200%);
+                -ms-transform: translateY(200%);
+                -webkit-transform: translateY(200%);
+                transform: translateY(200%);
+                opacity: 0
+            }
+            50% {
+                -moz-transform: translateY(200%);
+                -ms-transform: translateY(200%);
+                -webkit-transform: translateY(200%);
+                transform: translateY(200%);
+                opacity: 0
+            }
+            100% {
+                -moz-transform: translateY(0%);
+                -ms-transform: translateY(0%);
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+                opacity: 1
+            }
+        }
+        /*首页封面动画*/
+        
+        h1.main-title,
+        h1.fes-title,
+        .the-feature.from_left_and_right .info,
+        .header-info p,
+        .header-info,
+        .header-shuo,
+        .header-shuo p,
+        .focusinfo .header-tou img,
+        .top-social img,
+        .center-text {
+            -moz-animation: fadeInDown 2s;
+            -webkit-animation: fadeInDown 2s;
+            animation: fadeInDown 2s;
+        }
+        
+        @-moz-keyframes fadeInDown {
+            0% {
+                -moz-transform: translateY(-100%);
+                transform: translateY(-100%);
+                opacity: 0
+            }
+            50% {
+                -moz-transform: translateY(-100%);
+                transform: translateY(-100%);
+                opacity: 0
+            }
+            100% {
+                -moz-transform: translateY(0%);
+                transform: translateY(0%);
+                opacity: 1
+            }
+        }
+        
+        @-webkit-keyframes fadeInDown {
+            0% {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+                opacity: 0
+            }
+            50% {
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+                opacity: 0
+            }
+            100% {
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+                opacity: 1
+            }
+        }
+        
+        @keyframes fadeInDown {
+            0% {
+                -moz-transform: translateY(-100%);
+                -ms-transform: translateY(-100%);
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+                opacity: 0
+            }
+            50% {
+                -moz-transform: translateY(-100%);
+                -ms-transform: translateY(-100%);
+                -webkit-transform: translateY(-100%);
+                transform: translateY(-100%);
+                opacity: 0
+            }
+            100% {
+                -moz-transform: translateY(0%);
+                -ms-transform: translateY(0%);
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
+                opacity: 1
+            }
+        }
+        /*导航菜单动画*/
+        
+        .site-top ul {
+            -moz-animation: fadeInLeft 2s;
+            -webkit-animation: fadeInLeft 2s;
+            animation: fadeInLeft 2s;
+            max-width: 76vw;
+        }
+        
+        @-moz-keyframes fadeInLeft {
+            0% {
+                -moz-transform: translateX(100%);
+                transform: translateX(100%);
+                opacity: 0
+            }
+            50% {
+                -moz-transform: translateX(100%);
+                transform: translateX(100%);
+                opacity: 0
+            }
+            100% {
+                -moz-transform: translateX(0%);
+                transform: translateX(0%);
+                opacity: 1
+            }
+        }
+        
+        @-webkit-keyframes fadeInLeft {
+            0% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+                opacity: 0
+            }
+            50% {
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+                opacity: 0
+            }
+            100% {
+                -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+                opacity: 1
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            0% {
+                -moz-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+                opacity: 0
+            }
+            50% {
+                -moz-transform: translateX(100%);
+                -ms-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+                opacity: 0
+            }
+            100% {
+                -moz-transform: translateX(0%);
+                -ms-transform: translateX(0%);
+                -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+                opacity: 1
+            }
+        }
+        /*其他*/
+        
+        .headertop {
+            border-radius: 0 0 15px 15px;
+        }
+        
+        .author-profile .meta {
+            display: none;
+        }
+        
+        .post-modified-time {
+            display: none;
+        }
+        
+        @media (max-width: 860px) {
+            .headertop-down {
+                display: none
+            }
+        }
+        
+        .post-list-thumb:nth-child(2n) .post-content-wrap {
+            float: left;
+            padding-left: 30px;
+            padding-right: 0;
+            text-align: right;
+            margin: 20px 10px 10px 0
+        }
+        
+        .post-list-thumb:nth-child(2n) .post-thumb {
+            float: left
+        }
+        
+        .post-list-thumb:nth-child(2n) .post-thumb a {
+            border-radius: 10px 0 0 10px
+        }
+        
+        .pattern-center::after {
+            display: none;
+        }
+        
+        .pattern-center-blank {
+            display: none;
+        }
+        
+        .yya {
+            position: fixed;
+            -webkit-transition: all 1s ease !important;
+            transition: all 1s ease !important;
+            border-radius: 15px !important;
+        }
+        
+        .site-title img {
+            margin-left: 10px;
+        }
+        
+        .site-header {
+            border-radius: 15px !important;
+        }
+        
+        .header-user-menu {
+            border-radius: 15px !important;
+        }
+        
+        .lower li ul {
+            border-radius: 15px !important;
+        }
+        
+        @media (max-width:860px) {
+            .openNav .icon {
+                left: 5vw;
+            }
+            .site-header {
+                width: 100%;
+                height: 60px;
+                top: 0;
+                left: 0;
+                background: 0 0;
+                position: fixed;
+                border-radius: 0 !important;
+            }
+            .yya {
+                border-radius: 0 !important;
+            }
+        }
+        
+        .header-user-menu::before {
+            display: none;
+        }
+        
+        .lower li ul::before {
+            display: none;
+        }
+        
+        .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+            display: none;
+        }
+        
+        .cbp_tmtimeline>li .cbp_tmlabel:after {
+            display: none;
+        }
+        
+        .the-feature.from_left_and_right {
+            position: relative;
+            border-radius: 15px;
+            height: 160px;
+            width: 258px;
+            margin: 6px 6px 0 6px;
+        }
+        
+        .the-feature img {
+            height: 160px;
+            width: 258px;
+        }
+        
+        .notice {
+            text-align: center;
+        }
+        
+        h1.fes-title,
+        h1.main-title {
+            text-align: center;
+        }
+        
+        .notice {
+            background: #fbfbfb50;
+        }
+        
+        body {
+            background-size: cover;
+        }
+        
+        #video-add {
+            background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/add.svg);
+        }
+        
+        @media (max-width:860px) {
+            .headertop.filter-dot::before {
+                background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/grid.png);
+            }
+        }
+        
+        .headertop.filter-grid::before {
+            background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/grid.png);
+        }
+        
+        .headertop.filter-dot::before {
+            background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/dot.gif);
+        }
+        
+        .loadvideo,
+        .video-play {
+            background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/play.svg);
+        }
+        
+        .video-pause {
+            background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/pause.svg);
+        }
+        
+        #loading-comments {
+            background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.6/load_svg/ball.svg);
+        }
+    </style>
+    <link rel="icon" href="https://kiseki.blog/wp-content/uploads/2023/03/cropped-site-logo-1-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://kiseki.blog/wp-content/uploads/2023/03/cropped-site-logo-1-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://kiseki.blog/wp-content/uploads/2023/03/cropped-site-logo-1-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://kiseki.blog/wp-content/uploads/2023/03/cropped-site-logo-1-270x270.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code|Zen+Antique|DotGothic16|Satisfy&display=swap" media="all">
+    <script type="text/javascript">
+        if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+            alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！(Are you using IE? Some of the web elements might be broken, please use the latest browser to access！)');
+        }
+    </script>
+</head>
+
+<body class="post-template-default single single-post postid-19 single-format-standard chinese-font  ">
+    <div class="scrollbar" id="bar"></div>
+    <header class="site-header no-select" role="banner">
+        <div class="site-top">
+            <div class="site-branding">
+                <span class="site-title">
+						<span class="logolink moe-mashiro">
+							<a href="https://kiseki.blog">
+								<ruby>
+									<span class="sakuraso"></span>
+                <span class="no"></span>
+                <span class="shironeko"></span>
+                <rp></rp>
+                <rt class="chinese-font"></rt>
+                <rp></rp>
+                </ruby>
+                </a>
+                </span>
+                </span>
+                <!-- logo end -->
+            </div>
+            <!-- .site-branding -->
+            <div class="header-user-avatar">
+                <a href="https://kiseki.blog/wp-login.php?redirect_to=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%3Fpage%26year%3D2022%26monthnum%3D11%26day%3D28%26name%3Dsakurairo-theme-of-these-three-years-about-the-past-present-and-future">
+                    <img alt="header_user_avatar" src="https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/topavatar.png" width="30" height="30">
+                </a>
+                <div class="header-user-menu">
+                    <div class="header-user-name no-logged">
+                        <a id="login-link" href="https://kiseki.blog/wp-login.php?redirect_to=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%3Fpage%26year%3D2022%26monthnum%3D11%26day%3D28%26name%3Dsakurairo-theme-of-these-three-years-about-the-past-present-and-future"
+                            data-no-pjax style="font-weight:bold;text-decoration:none">登录</a>
+                    </div>
+                </div>
+            </div>
+            <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="lower">
+                <nav>
+                    <ul id="menu-%e4%b8%bb" class="menu">
+                        <li><a href="https://kiseki.blog/">ホーム</a></li>
+                        <li><a href="https://kiseki.blog/friends/">友だち</a></li>
+                        <li><a href="https://kiseki.blog/daily_record/">日常</a></li>
+                        <li><a href="https://kiseki.blog/bangumi/">映画集</a></li>
+                    </ul>
+                </nav>
+                <!-- #site-navigation -->
+            </div>
+        </div>
+    </header>
+    <!-- #masthead -->
+    <div class="openNav no-select">
+        <div class="iconflat no-select" style="padding: 30px;">
+            <div class="icon"></div>
+        </div>
+    </div>
+    <!-- m-nav-bar -->
+    <section id="main-container">
+        <div class="headertop filter-nothing">
+            <div id="banner_wave_1"></div>
+            <div id="banner_wave_2"></div>
+            <figure id="centerbg" class="centerbg">
+                <div class="focusinfo">
+                    <div class="header-tou">
+                        <a href="https://kiseki.blog"><img alt="avatar" loading="lazy" src="https://s.nmxc.ltd/sakurairo_vision/asuhe/furina.webp"></a>
+                        <span class="signature">furina</span>
+                    </div>
+                    <div class="header-container">
+                        <div class="header-info">
+                            <!-- 首页一言打字效果 -->
+                            <span class="element">Kira☆kira☆</span>
+                            <span class="element"></span>
+                            <script type="application/json" id="typed-js-initial">
+                                {
+                                    "strings": ["Non, le grand amour ne suffit pas.Seul un adieu fleurira."],
+                                    "typeSpeed": 140,
+                                    "backSpeed": 50,
+                                    "loop": false,
+                                    "showCursor": true
+                                }
+                            </script>
+                            <!-- var typed = new Typed('.element', {
+                            strings: ["给时光以生命，给岁月以文明", ], //输入内容, 支持html标签
+                            typeSpeed: 140, //打字速度
+                            backSpeed: 50, //回退速度
+                            loop: false, //是否循环
+                            loopCount: Infinity,
+                            showCursor: true //是否开启光标
+                        }); -->
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="top-social">
+                        <li id="bg-pre"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.6/display_icon/muh2/pre.png" loading="lazy" alt="上一篇" /></li>
+                        <li>
+                            <a href="https://space.bilibili.com/10398973" target="_blank" class="social-bili" title="bilibili"><img alt="bilibili" loading="lazy" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/display_icon/muh2/bilibili.png" /></a>
+                        </li>
+                        <li>
+                            <a href="tencent://message/?uin=798494815" target="_blank" class="social-qq" title="qq"><img alt="qq" loading="lazy" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/display_icon/muh2/qq.png" /></a>
+                        </li>
+                        <li>
+                            <a href="https://music.163.com/#/user/home?id=33606928" target="_blank" class="social-wangyiyun" title="cloudmusic"><img alt="cloudmusic" loading="lazy" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/display_icon/muh2/ncm.png" /></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mirai-mamori" target="_blank" class="social-github" title="github"><img alt="github" loading="lazy" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/display_icon/muh2/github.png" /></a>
+                        </li>
+                        <li id="bg-next"><img loading="lazy" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/display_icon/muh2/next.png" alt="下一篇" /></li>
+                    </div>
+                </div>
+            </figure>
+            <!-- 首页下拉箭头 -->
+            <div class="headertop-down" onclick="headertop_down()"><span><svg t="1682342753354" class="homepage-downicon" viewBox="0 0 1843 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21355" width="80px" height="80px"><path d="M1221.06136021 284.43250057a100.69380037 100.69380037 0 0 1 130.90169466 153.0543795l-352.4275638 302.08090944a100.69380037 100.69380037 0 0 1-130.90169467 0L516.20574044 437.48688007A100.69380037 100.69380037 0 0 1 647.10792676 284.43250057L934.08439763 530.52766665l286.97696258-246.09516608z" fill="rgba(255,255,255,0.8)" p-id="21356"></path></svg></span></div>
+        </div>
+        <div id="page" class="site wrapper">
+            <div class="pattern-center-blank"></div>
+            <div class="pattern-center single-center">
+                <div class="pattern-attachment bg lazyload" style="background-image: url(https://s.nmxc.ltd/sakurairo_vision/@2.5/load_svg/outload.svg)" data-src="https://kiseki.blog/wp-content/uploads/2023/03/banner-Sakurairo-Theme-of-these-three-years-about-the-past-present-and-future.jpg">
+                </div>
+                <header class="pattern-header single-header">
+                    <h1 class="entry-title">Sakurairo 主题的这三年——关于过去、现在和未来</h1><span class="toppic-line"></span>
+                    <p class="entry-census"><span><a href="https://kiseki.blog/author/hitomi/"><img alt='' src='https://weavatar.com/avatar/91378fbe2581039062f784352876c2b8?s=64&#038;d=mm&#038;r=g' srcset='https://weavatar.com/avatar/91378fbe2581039062f784352876c2b8?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' decoding='async'/></a></span><span><a href="https://kiseki.blog/author/hitomi/">染川瞳</a></span>
+                        <span class="bull">·</span>2022-11-28<span class="bull">·</span>3447 次阅读</p>
+                </header>
+            </div>
+            <div id="content" class="site-content">
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main" role="main">
+
+                        <div class="has-toc have-toc"></div>
+
+                        <article id="post-19" class="post-19 post type-post status-publish format-standard has-post-thumbnail hentry category-record tag-sakurairo tag-4 tag-5 tag-6">
+                            <!--<div class="toc-entry-content">-->
+                            <!-- 套嵌目录使用（主要为了支援评论）-->
+
+                            <div class="entry-content">
+                                {{ &articleSingle.contentHtml }}
+
+                            </div>
+                            <!-- .entry-content -->
+                            <footer class="post-footer">
+                                <div class="post-lincenses">
+                                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow">
+                                        <i class="fa-brands fa-creative-commons"></i>
+                                    </a>
+                                </div>
+                                <div class="reward-open"> <i class="fa-solid fa-piggy-bank fa-sm"></i>
+                                    <div class="reward-main">
+                                        <ul class="reward-row">
+                                            <li class="wechat-code"><img alt="wechat_img" src="https://kiseki.blog/wp-content/uploads/2023/03/IMG_1531.jpeg"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <section class="author-profile">
+                                    <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                                        <a href="https://kiseki.blog/author/hitomi/" class="profile gravatar">
+                                            <img class="fa-spin" style="--fa-animation-duration: 15s;" src="https://s.nmxc.ltd/sakurairo_vision/asuhe/furina.webp" itemprop="image" alt="染川瞳" height="30" width="30">
+                                        </a>
+                                    </div>
+                                    <div class="meta">
+                                        <a href="https://kiseki.blog/author/hitomi/" itemprop="url" rel="author">染川瞳</a>
+                                    </div>
+                                    <div class="desc">
+                                        <i class="fa-solid fa-feather" aria-hidden="true"></i>Moi, je suis et serai toujours là, à voir le monde et sa beauté. </div>
+                                </section>
+                                <div class="post-modified-time">
+                                    <i class="fa-solid fa-calendar-day" aria-hidden="true"></i>最后更新于 2024-01-08 </div>
+                                <div class="post-tags">
+                                    <i class="fa-solid fa-tag" aria-hidden="true"></i> <a href="https://kiseki.blog/tag/sakurairo%e4%b8%bb%e9%a2%98/" rel="tag">Sakurairo主题</a> <a href="https://kiseki.blog/tag/%e4%b8%bb%e9%a2%98/" rel="tag">主题</a> <a href="https://kiseki.blog/tag/%e5%9b%9e%e5%bf%86/"
+                                        rel="tag">回忆</a> <a href="https://kiseki.blog/tag/%e6%80%bb%e7%bb%93/" rel="tag">总结</a> </div>
+                            </footer>
+                            <!-- .entry-footer -->
+                        </article>
+                        <!-- #post-## -->
+                        <div class="toc-container">
+                            <div class="toc"></div>
+                        </div>
+                        <section class="post-squares nextprev">
+                            <div class="post-nepre half previous">
+                            </div>
+                            <div class="post-nepre full next">
+                                <a href="https://kiseki.blog/2023/04/15/just-talk-about-chatgpt/" rel="next">
+                                    <div class="background lazyload" style="background-image:url(https://s.nmxc.ltd/sakurairo_vision/@2.6/load_svg/outload.svg);" data-src="https://kiseki.blog/wp-content/uploads/2023/04/图片1-1-1024x615.png"></div><span class="label">下一篇文章</span>
+                                    <div class="info">
+                                        <h3>「Just Talk」与 JokerM 聊聊 ChatGPT</h3>
+                                        <hr>
+                                    </div>
+                                </a>
+                            </div>
+                        </section>
+                    </main>
+                    <!-- #main -->
+                </div>
+                <!-- #primary -->
+            </div>
+            <!-- #content -->
+
+
+            <section id="comments" class="comments">
+                <div class="commentwrap comments-hidden comments-fold">
+                    <div class="notification"><i class="fa-regular fa-comment"></i>查看评论 -
+                        <span class="noticom">4 条评论 </span>
+                    </div>
+                </div>
+                <div class="comments-main">
+                    <h3 id="comments-list-title">Comments <span class="noticom">4 条评论 </span></h3>
+                    <div id="loading-comments"><span></span></div>
+                    <ul class="commentwrap">
+                        <li class="comment even thread-even depth-1" id="comment-15">
+                            <div class="contents">
+                                <div class="comment-arrow">
+                                    <div class="main shadow">
+                                        <div class="profile">
+                                            <a href="" target="_blank" rel="nofollow"><img alt='Davinci' src="https://s.nmxc.ltd/sakurairo_vision/@2.5/load_svg/inload.svg" onerror="imgError(this,1)" data-src='https://weavatar.com/avatar/d0cbf70ccb2c3584f4c8a13e5abc9a57?s=80&#038;d=mm&#038;r=g'
+                                                    srcset='https://weavatar.com/avatar/d0cbf70ccb2c3584f4c8a13e5abc9a57?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo lazyload' height='80' width='80' loading='lazy' decoding='async' /></a>
+                                        </div>
+                                        <div class="commentinfo">
+                                            <section class="commeta">
+                                                <div class="left">
+                                                    <h4 class="author">
+                                                        <a href="" target="_blank" rel="nofollow"><img alt='Davinci' src='https://weavatar.com/avatar/d0cbf70ccb2c3584f4c8a13e5abc9a57?s=24&#038;d=mm&#038;r=g' srcset='https://weavatar.com/avatar/d0cbf70ccb2c3584f4c8a13e5abc9a57?s=48&#038;d=mm&#038;r=g 2x'
+                                                                class='avatar avatar-24 photo' height='24' width='24' loading='lazy' decoding='async' /> <span class="bb-comment isauthor" title="作者">博主</span> Davinci
+                                                            <span class="showGrade0" title="Lv0"><img alt="level_img" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/comment_level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>                                                            </a>
+                                                    </h4>
+                                                </div>
+                                                <a rel="nofollow" class="comment-reply-login" href="https://kiseki.blog/wp-login.php?redirect_to=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%2F">登录以回复</a>
+                                                <div class="right">
+                                                    <div class="info"><time datetime="2022-12-03">发布于 2022-12-03 18:03</time>&nbsp;&nbsp;<span class="useragent-info">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow )</span>
+                                                        <span class="useragent-info-m">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg"> )</span>&nbsp;
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class="body">
+                                            <p>恭喜恭喜~</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow-left"></div>
+                                </div>
+                            </div>
+                            <hr>
+                        </li>
+                        <!-- #comment-## -->
+                        <li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16">
+                            <div class="contents">
+                                <div class="comment-arrow">
+                                    <div class="main shadow">
+                                        <div class="profile">
+                                            <a href="" target="_blank" rel="nofollow"><img alt='cxy520' src="https://s.nmxc.ltd/sakurairo_vision/@2.5/load_svg/inload.svg" onerror="imgError(this,1)" data-src='https://weavatar.com/avatar/3041b6934cbd03430a23a93baa58cf88?s=80&#038;d=mm&#038;r=g'
+                                                    srcset='https://weavatar.com/avatar/3041b6934cbd03430a23a93baa58cf88?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo lazyload' height='80' width='80' loading='lazy' decoding='async' /></a>
+                                        </div>
+                                        <div class="commentinfo">
+                                            <section class="commeta">
+                                                <div class="left">
+                                                    <h4 class="author">
+                                                        <a href="" target="_blank" rel="nofollow"><img alt='cxy520' src='https://weavatar.com/avatar/3041b6934cbd03430a23a93baa58cf88?s=24&#038;d=mm&#038;r=g' srcset='https://weavatar.com/avatar/3041b6934cbd03430a23a93baa58cf88?s=48&#038;d=mm&#038;r=g 2x'
+                                                                class='avatar avatar-24 photo' height='24' width='24' loading='lazy' decoding='async' /> <span class="bb-comment isauthor" title="作者">博主</span> cxy520
+                                                            <span class="showGrade0" title="Lv0"><img alt="level_img" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/comment_level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>                                                            </a>
+                                                    </h4>
+                                                </div>
+                                                <a rel="nofollow" class="comment-reply-login" href="https://kiseki.blog/wp-login.php?redirect_to=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%2F">登录以回复</a>
+                                                <div class="right">
+                                                    <div class="info"><time datetime="2022-12-29">发布于 2022-12-29 18:21</time>&nbsp;&nbsp;<span class="useragent-info">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow )</span>
+                                                        <span class="useragent-info-m">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg"> )</span>&nbsp;
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class="body">
+                                            <p>可以教一下怎么美化吗？</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow-left"></div>
+                                </div>
+                            </div>
+                            <hr>
+                        </li>
+                        <!-- #comment-## -->
+                        <li class="comment even thread-even depth-1" id="comment-17">
+                            <div class="contents">
+                                <div class="comment-arrow">
+                                    <div class="main shadow">
+                                        <div class="profile">
+                                            <a href="" target="_blank" rel="nofollow"><img alt='uptiona' src="https://s.nmxc.ltd/sakurairo_vision/@2.5/load_svg/inload.svg" onerror="imgError(this,1)" data-src='https://weavatar.com/avatar/163ed52d784049bdd78550bb9911ab5f?s=80&#038;d=mm&#038;r=g'
+                                                    srcset='https://weavatar.com/avatar/163ed52d784049bdd78550bb9911ab5f?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo lazyload' height='80' width='80' loading='lazy' decoding='async' /></a>
+                                        </div>
+                                        <div class="commentinfo">
+                                            <section class="commeta">
+                                                <div class="left">
+                                                    <h4 class="author">
+                                                        <a href="" target="_blank" rel="nofollow"><img alt='uptiona' src='https://weavatar.com/avatar/163ed52d784049bdd78550bb9911ab5f?s=24&#038;d=mm&#038;r=g' srcset='https://weavatar.com/avatar/163ed52d784049bdd78550bb9911ab5f?s=48&#038;d=mm&#038;r=g 2x'
+                                                                class='avatar avatar-24 photo' height='24' width='24' loading='lazy' decoding='async' /> <span class="bb-comment isauthor" title="作者">博主</span> uptiona
+                                                            <span class="showGrade0" title="Lv0"><img alt="level_img" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/comment_level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>                                                            </a>
+                                                    </h4>
+                                                </div>
+                                                <a rel="nofollow" class="comment-reply-login" href="https://kiseki.blog/wp-login.php?redirect_to=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%2F">登录以回复</a>
+                                                <div class="right">
+                                                    <div class="info"><time datetime="2023-01-07">发布于 2023-01-07 18:02</time>&nbsp;&nbsp;<span class="useragent-info">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow )</span>
+                                                        <span class="useragent-info-m">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg"> )</span>&nbsp;
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class="body">
+                                            <p>感谢大佬，我现在用的是2.5版本</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow-left"></div>
+                                </div>
+                            </div>
+                            <hr>
+                        </li>
+                        <!-- #comment-## -->
+                        <li class="comment odd alt thread-odd thread-alt depth-1" id="comment-18">
+                            <div class="contents">
+                                <div class="comment-arrow">
+                                    <div class="main shadow">
+                                        <div class="profile">
+                                            <a href="" target="_blank" rel="nofollow"><img alt='SWEET' src="https://s.nmxc.ltd/sakurairo_vision/@2.5/load_svg/inload.svg" onerror="imgError(this,1)" data-src='https://weavatar.com/avatar/c08af43b652b7dff9bade17ec71e9fd5?s=80&#038;d=mm&#038;r=g'
+                                                    srcset='https://weavatar.com/avatar/c08af43b652b7dff9bade17ec71e9fd5?s=160&#038;d=mm&#038;r=g 2x' class='avatar avatar-80 photo lazyload' height='80' width='80' loading='lazy' decoding='async' /></a>
+                                        </div>
+                                        <div class="commentinfo">
+                                            <section class="commeta">
+                                                <div class="left">
+                                                    <h4 class="author">
+                                                        <a href="" target="_blank" rel="nofollow"><img alt='SWEET' src='https://weavatar.com/avatar/c08af43b652b7dff9bade17ec71e9fd5?s=24&#038;d=mm&#038;r=g' srcset='https://weavatar.com/avatar/c08af43b652b7dff9bade17ec71e9fd5?s=48&#038;d=mm&#038;r=g 2x'
+                                                                class='avatar avatar-24 photo' height='24' width='24' loading='lazy' decoding='async' /> <span class="bb-comment isauthor" title="作者">博主</span> SWEET
+                                                            <span class="showGrade0" title="Lv0"><img alt="level_img" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/comment_level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>                                                            </a>
+                                                    </h4>
+                                                </div>
+                                                <a rel="nofollow" class="comment-reply-login" href="https://kiseki.blog/wp-login.php?redirect_to=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%2F">登录以回复</a>
+                                                <div class="right">
+                                                    <div class="info"><time datetime="2023-01-23">发布于 2023-01-23 04:11</time>&nbsp;&nbsp;<span class="useragent-info">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;Unknow )</span>
+                                                        <span class="useragent-info-m">( <img alt="browser_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg">&nbsp;&nbsp;<img alt="os_icon" src="https://s.nmxc.ltd/sakurairo_vision/@2.6/ua/unknown.svg"> )</span>&nbsp;
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div class="body">
+                                            <p>加油！加油！从一开始就关注（虽然中间断了一段时间）看主题越来越好，要加油奥</p>
+                                        </div>
+                                    </div>
+                                    <div class="arrow-left"></div>
+                                </div>
+                            </div>
+                            <hr>
+                        </li>
+                        <!-- #comment-## -->
+                    </ul>
+                    <nav id="comments-navi">
+                    </nav>
+
+
+                    <div id="respond" class="comment-respond">
+                        <h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2022/11/28/sakurairo-theme-of-these-three-years-about-the-past-present-and-future/#respond" style="display:none;">取消回复</a></small></h3>
+                        <p class="must-log-in">要发表评论，您必须先<a href="https://kiseki.blog/wp-login.php?redirect_to=https%3A%2F%2Fkiseki.blog%2F2022%2F11%2F28%2Fsakurairo-theme-of-these-three-years-about-the-past-present-and-future%2F">登录</a>。</p>
+                    </div>
+                    <!-- #respond -->
+
+                </div>
+
+
+            </section>
+        </div>
+        <!-- #page Pjax container-->
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info" theme-info="Sakurairo v2.6.4">
+                <div class="footertext">
+                    <div class="img-preload">
+                        <img alt="loading_svg" src="https://s.nmxc.ltd/sakurairo_vision/@2.5/load_svg/ball.svg">
+                        <!-- 加载下一部分圈圈 -->
+                    </div>
+                    <p style="color: #666666;">Copyright © by Hitomi All Rights Reserved.</p>
+                </div>
+                <div class="footer-device function_area">
+                    <span style="color: #b9b9b9;">
+																		                        <br>
+						<a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Theme Sakurairo</a><a href="https://docs.fuukei.org/" rel="noopener" target="_blank" id="site-info" > by Fuukei</a> 
+					</span>
+                </div>
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon -->
+    </section>
+    <!-- #section -->
+    <!-- m-nav-center -->
+    <div id="mo-nav">
+        <div class="m-avatar">
+            <img alt="m-avatar" src="https://s.nmxc.ltd/sakurairo_vision/asuhe/furina.webp">
+        </div>
+        <div class="m-search">
+            <form class="m-search-form" method="get" action="https://kiseki.blog" role="search">
+                <input class="m-search-input" type="search" name="s" placeholder="搜索..." required>
+            </form>
+        </div>
+        <ul id="menu-%e4%b8%bb-1" class="menu">
+            <li><a href="https://kiseki.blog/">ホーム</a></li>
+            <li><a href="https://kiseki.blog/friends/">友だち</a></li>
+            <li><a href="https://kiseki.blog/daily_record/">日常</a></li>
+            <li><a href="https://kiseki.blog/bangumi/">映画集</a></li>
+        </ul>
+    </div>
+    <!-- m-nav-center end -->
+    <button id="moblieGoTop" title="回到顶部"><i class="fa-solid fa-caret-up fa-lg"></i></button>
+    <button id="changskin" title="控制面板"><i class="fa-solid fa-compass-drafting fa-lg fa-flip"></i></button>
+    <!-- search start -->
+    <form class="js-search search-form search-form--modal" method="get" action="https://kiseki.blog" role="search">
+        <div class="search-form__inner">
+            <div class="micro">
+                <p class="micro mb-">想要找点什么呢？</p>
+                <input class="text-input" type="search" name="s" placeholder="搜索" required>
+            </div>
+        </div>
+        <div class="search_close"></div>
+    </form>
+    <!-- search end -->
+    <script type="module">
+        import { Workbox } from "https:\/\/kiseki.blog\/wp-content\/plugins\/pwa\/wp-includes\/js\/workbox-v7.0.0\/workbox-window.prod.js"; if ( 'serviceWorker' in navigator ) { window.wp = window.wp || {}; window.wp.serviceWorkerWindow = new Workbox( "https:\/\/kiseki.blog\/wp.serviceworker",
+        {"scope":"\/"} ); window.wp.serviceWorkerWindow.register(); }
+    </script>
+    <style id='core-block-supports-inline-css' type='text/css'>
+        .wp-block-gallery.wp-block-gallery-1 {
+            --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+            gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+        }
+        
+        .wp-block-gallery.wp-block-gallery-2 {
+            --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+            gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+        }
+        
+        .wp-container-core-columns-is-layout-1 {
+            flex-wrap: nowrap;
+        }
+        
+        .wp-container-core-columns-is-layout-2 {
+            flex-wrap: nowrap;
+        }
+        
+        .wp-block-gallery.wp-block-gallery-3 {
+            --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+            gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+        }
+        
+        .wp-container-core-columns-is-layout-3 {
+            flex-wrap: nowrap;
+        }
+        
+        .wp-container-core-columns-is-layout-4 {
+            flex-wrap: nowrap;
+        }
+        
+        .wp-container-core-columns-is-layout-5 {
+            flex-wrap: nowrap;
+        }
+        
+        .wp-block-gallery.wp-block-gallery-4 {
+            --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+            gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+        }
+        
+        .wp-block-gallery.wp-block-gallery-5 {
+            --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+            gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+        }
+        
+        .wp-block-gallery.wp-block-gallery-6 {
+            --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+            gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+        }
+        
+        .wp-block-gallery.wp-block-gallery-7 {
+            --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+            gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em)));
+        }
+    </style>
+    <script type="text/javascript" src="https://kiseki.blog/wp-content/themes/sakurairo/js/smoothscroll.js" id="SmoothScroll-js"></script>
+    <script type="text/javascript" src="https://kiseki.blog/wp-content/themes/sakurairo/js/polyfill.js" id="polyfills-js"></script>
+    <script type="text/javascript" id="app-js-before">
+        /* <![CDATA[ */
+        var _iro = {
+                "pjax": true,
+                "movies": "close",
+                "windowheight": "auto",
+                "ajaxurl": "https:\/\/kiseki.blog\/wp-admin\/admin-ajax.php",
+                "order": "asc",
+                "formpostion": "bottom",
+                "api": "https:\/\/kiseki.blog\/wp-json\/",
+                "nonce": "bb13564a6d",
+                "google_analytics_id": "",
+                "gravatar_url": "weavatar.com\/avatar",
+                "NProgressON": true,
+                "audio": false,
+                "baguetteBox": false,
+                "fancybox": false,
+                "darkmode": true,
+                "email_domain": "",
+                "email_name": "",
+                "ext_shared_lib": 0,
+                "cookie_version_control": "",
+                "qzone_autocomplete": false,
+                "site_name": "明日が来ると",
+                "author_name": "染川瞳",
+                "template_url": "https:\/\/kiseki.blog\/wp-content\/themes\/sakurairo",
+                "site_url": "https:\/\/kiseki.blog",
+                "qq_api_url": "https:\/\/kiseki.blog\/wp-json\/sakura\/v1\/qqinfo\/json",
+                "land_at_home": false,
+                "live_search": false,
+                "loading_ph": "https:\/\/s.nmxc.ltd\/sakurairo_vision\/@2.5\/load_svg\/inload.svg",
+                "clipboardCopyright": true,
+                "entry_content_style": "sakurairo",
+                "random_graphs_mts": true,
+                "code_highlight": "hljs",
+                "comment_upload_img": false,
+                "cache_cover": true,
+                "site_bg_as_cover": true,
+                "yiyan_api": ["https:\/\/v1.hitokoto.cn\/", "https:\/\/api.nmxc.ltd\/yiyan\/"],
+                "skin_bg0": "",
+                "skin_bg1": "https:\/\/s.nmxc.ltd\/sakurairo_vision\/@2.5\/background\/bg1.png",
+                "skin_bg2": "https:\/\/s.nmxc.ltd\/sakurairo_vision\/@2.5\/background\/bg2.png",
+                "skin_bg3": "https:\/\/s.nmxc.ltd\/sakurairo_vision\/@2.5\/background\/bg3.png",
+                "skin_bg4": "https:\/\/s.nmxc.ltd\/sakurairo_vision\/@2.5\/background\/bg4.png",
+                "cover_api": "https:\/\/api.maho.cc\/asuhe-rand\/index.php",
+                "dm_strategy": "time"
+            }
+            /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://kiseki.blog/wp-content/themes/sakurairo/js/app.js" id="app-js"></script>
+    <script type="text/javascript" src="https://kiseki.blog/wp-content/themes/sakurairo/js/page.js" id="app-page-js"></script>
+    <script type="text/javascript" src="https://kiseki.blog/wp-includes/js/comment-reply.min.js" id="comment-reply-js" async="async" data-wp-strategy="async"></script>
+    <div class="skin-menu no-select">
+
+        <div class="footer-shuo">
+            <p>不確かな夢叶えるのさ 約束の夜に 微かな風に願うのさ 静寂の朝に 遠い星の少年は その腕に約束の飾り まだ旅路の最中さ 幻惑の園に -------第ゼロ感 （10-FEET）</p>
+            <p class="footer-shuotime"><i class="fa-regular fa-clock"></i> 2024/1/4 16:48</p>
+        </div>
+
+        <div class="theme-controls row-container">
+            <ul class="menu-list">
+                <li id="white-bg" title="浅色模式">
+                    <i class="fa-regular fa-sun"></i>
+                </li>
+                <!--Default-->
+                <li id="dark-bg" title="深色模式">
+                    <i class="fa-regular fa-moon"></i>
+                </li>
+                <!--Night-->
+            </ul>
+
+            <div class="font-family-controls row-container">
+                <button type="button" class="control-btn-serif selected" title="切换到字体 A" data-name="serif">
+      <i class="fa-solid fa-font fa-lg"></i>
+    </button>
+                <button type="button" class="control-btn-sans-serif" title="切换到字体 B" data-name="sans-serif">
+      <i class="fa-solid fa-bold fa-lg"></i>
+    </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 首页波浪特效 -->
+
+</body>
+<!-- Particles动效 -->
+
+</html>
+
+<!-- Cached by WP-Optimize - https://getwpo.com - Last modified: September 17, 2024 2:13 am (Asia/Tokyo UTC:9) -->
