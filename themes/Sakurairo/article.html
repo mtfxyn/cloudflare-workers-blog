@@ -1289,10 +1289,11 @@
             </form>
         </div>
         <ul id="menu-%e4%b8%bb-1" class="menu">
-            <li><a href="https://kiseki.blog/">ホーム</a></li>
-            <li><a href="https://kiseki.blog/friends/">友だち</a></li>
-            <li><a href="https://kiseki.blog/daily_record/">日常</a></li>
-            <li><a href="https://kiseki.blog/bangumi/">映画集</a></li>
+            {{ #widgetMenuList }}
+            <li id="menu-item-211" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-211">
+                <a href="{{ &url }}">{{ &title }}</a>
+            </li>
+            {{ /widgetMenuList }}
         </ul>
     </div>
     <!-- m-nav-center end -->
