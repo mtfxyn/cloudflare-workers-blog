@@ -1097,10 +1097,11 @@
             <div class="lower">
                 <nav>
                     <ul id="menu-%e4%b8%bb" class="menu">
-                        <li><a href="https://kiseki.blog/">ホーム</a></li>
-                        <li><a href="https://kiseki.blog/friends/">友だち</a></li>
-                        <li><a href="https://kiseki.blog/daily_record/">日常</a></li>
-                        <li><a href="https://kiseki.blog/bangumi/">映画集</a></li>
+                        {{ #widgetMenuList }}
+                        <li id="menu-item-211" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-211">
+                            <a href="{{ &url }}">{{ &title }}</a>
+                        </li>
+                        {{ /widgetMenuList }}
                     </ul>
                 </nav>
                 <!-- #site-navigation -->
@@ -1209,23 +1210,14 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <section class="author-profile">
-                                    <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                                        <a href="https://kiseki.blog/author/hitomi/" class="profile gravatar">
-                                            <img class="fa-spin" style="--fa-animation-duration: 15s;" src="https://s.nmxc.ltd/sakurairo_vision/asuhe/furina.webp" itemprop="image" alt="染川瞳" height="30" width="30">
-                                        </a>
-                                    </div>
-                                    <div class="meta">
-                                        <a href="https://kiseki.blog/author/hitomi/" itemprop="url" rel="author">染川瞳</a>
-                                    </div>
-                                    <div class="desc">
-                                        <i class="fa-solid fa-feather" aria-hidden="true"></i>Moi, je suis et serai toujours là, à voir le monde et sa beauté. </div>
-                                </section>
+                                
                                 <div class="post-modified-time">
                                     <i class="fa-solid fa-calendar-day" aria-hidden="true"></i>最后更新于 2024-01-08 </div>
                                 <div class="post-tags">
-                                    <i class="fa-solid fa-tag" aria-hidden="true"></i> <a href="https://kiseki.blog/tag/sakurairo%e4%b8%bb%e9%a2%98/" rel="tag">Sakurairo主题</a> <a href="https://kiseki.blog/tag/%e4%b8%bb%e9%a2%98/" rel="tag">主题</a> <a href="https://kiseki.blog/tag/%e5%9b%9e%e5%bf%86/"
-                                        rel="tag">回忆</a> <a href="https://kiseki.blog/tag/%e6%80%bb%e7%bb%93/" rel="tag">总结</a> </div>
+									{{ #articleSingle.tags }}
+									<a href="/tags/{{&.}}" rel="tag">{{&.}} </a> 
+								{{ /articleSingle.tags }}
+								</div>
                             </footer>
                             <!-- .entry-footer -->
                         </article>
@@ -1240,8 +1232,10 @@
                                 <a href="https://kiseki.blog/2023/04/15/just-talk-about-chatgpt/" rel="next">
                                     <div class="background lazyload" style="background-image:url(https://s.nmxc.ltd/sakurairo_vision/@2.6/load_svg/outload.svg);" data-src="https://kiseki.blog/wp-content/uploads/2023/04/图片1-1-1024x615.png"></div><span class="label">下一篇文章</span>
                         <div class="info">
-                            <h3>「Just Talk」与 JokerM 聊聊 ChatGPT</h3>
-                            <hr>
+                            {{ #articleNewer }}
+                            <a href="{{ &url }}" rel="prev">
+                                <span class="meta-nav">←</span>{{ &title }}</a>
+                            {{ /articleNewer }}
                         </div>
                         </a>
             </div>
