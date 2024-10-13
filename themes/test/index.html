@@ -123,7 +123,7 @@
                     <header class="entry-header">
                         <h2 class="entry-title">
 
-                            <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="link">{{ &title }}</a>
+                            <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="title">{{ &title }}</a>
 
                         </h2>
                     </header>
@@ -134,12 +134,12 @@
                     <footer class="entry-meta">
                         <span>分类:
                         {{ #category }}
-                            <a href="/category/{{&.}}" rel="category tag">{{&.}}</a>
+                            <a href="/category/{{&.}}" rel="category tag" class="link">{{&.}}</a>
                         {{ /category }}
                         </span>
                         <span>标签：
                         {{ #tags }}
-                            <a href="/tags/{{&.}}" rel="tag">{{&.}}</a>
+                            <a href="/tags/{{&.}}" rel="tag" class="link">{{&.}}</a>
                         {{ /tags }}
                         </span>
                         <span>{{ &createDate10 }}</span>
