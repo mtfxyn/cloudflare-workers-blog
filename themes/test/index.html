@@ -44,7 +44,6 @@
         
         body {
             display: flex;
-            
             flex-direction: column;
             background-image: url("https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/anime/raw/91269619_p0.webp");
             background-position: center;
@@ -115,53 +114,44 @@
 
 
     <div class="articleList">
+        {{ #articleList.length }} {{ #articleList }}
+        <article id="post-{{&id}}">
+            <div class="all">
+                <header class="entry-header">
+                    <h2 class="entry-title">
 
-        <div>
-            {{ #articleList.length }} {{ #articleList }}
-            <article id="post-{{&id}}">
-                <div class="all">
-                    <header class="entry-header">
-                        <h2 class="entry-title">
+                        <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="title">{{ &title }}</a>
 
-                            <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="title">{{ &title }}</a>
+                    </h2>
+                </header>
+                <p class="preview">
+                    {{ &contentText }} ...
+                </p>
 
-                        </h2>
-                    </header>
-                    <p class="preview">
-                        {{ &contentText }} ...
-                    </p>
-
-                    <footer class="entry-meta">
-                        <span>分类:
+                <footer class="entry-meta">
+                    <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag" class="link">{{&.}}</a>
                         {{ /category }}
                         </span>
-                        <span>标签：
+                    <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag" class="link">{{&.}}</a>
                         {{ /tags }}
                         </span>
-                        <span>{{ &createDate10 }}</span>
-                    </footer>
-                </div>
-
-        </div>
-        {{ /articleList }} {{ /articleList.length }}
+                    <span>{{ &createDate10 }}</span>
+                </footer>
+            </div>
         </article>
+        {{ /articleList }} {{ /articleList.length }}
+    </div>
+    <div class="footer">
+        <div>Copyright © 2024 mtfxyn 保留所有权利。</div>
+        <div>Powered by <a href="https://www.cloudflare.com" class="dibua">Cloudflare</a> &amp; <a href="https://blog.gezhong.vip" class="dibua">CF-Blog </a></div>
 
 
 
 
-        <div class="footer">
-            <div>Copyright © 2024 mtfxyn 保留所有权利。</div>
-            <div>Powered by <a href="https://www.cloudflare.com" class="dibua">Cloudflare</a> &amp; <a href="https://blog.gezhong.vip" class="dibua">CF-Blog </a></div>
-
-
-
-
-
-        </div>
 
     </div>
 
