@@ -85,9 +85,12 @@
             height: auto;
         }
         
-        .preview {
-            line-height: 25px;
-            padding-top: 10px;
+        .article {
+            margin-top: 23px;
+            text-align: justify;
+            font-size: 20px;
+            line-height: 38px;
+            text-indent: 0em;
         }
     </style>
 
@@ -102,8 +105,9 @@
         <div class="title">
             <h2>{{ &articleSingle.title }}</h2>
         </div>
-        {{ &articleSingle.contentHtml }}
-
+        <div class="article">
+            {{ &articleSingle.contentHtml }}
+        </div>
 
     </div>
 
