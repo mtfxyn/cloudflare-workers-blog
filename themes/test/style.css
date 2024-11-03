@@ -65,7 +65,7 @@
     min-height: 100vh;
     flex-direction: column;
     border-radius: 10px 10px 0px 0px;
-    background-color: var(--base-color);
+    background-color: var(--base-background);
 }
 
 .footer {
@@ -87,6 +87,10 @@
 
 .sakura-icon {
     animation: slow-rotate 10s linear infinite;
+}
+
+.indextext {
+    color: var(--base-text)
 }
 
 .lilaoshi {

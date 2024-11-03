@@ -100,23 +100,26 @@
 
                             </h2>
                         </header>
-                        <p class="preview">
-                            {{ &contentText }} ...
-                        </p>
+                        <div class="indextext">
+                            <p class="preview">
+                                {{ &contentText }} ...
+                            </p>
 
-                        <footer class="entry-meta">
-                            <span>分类:
-                        {{ #category }}
-                            <a href="/category/{{&.}}" rel="category tag" class="link">{{&.}}</a>
-                        {{ /category }}
-                        </span>
-                            <span>标签：
-                        {{ #tags }}
-                            <a href="/tags/{{&.}}" rel="tag" class="link">{{&.}}</a>
-                        {{ /tags }}
-                        </span>
-                            <span>{{ &createDate10 }}</span>
-                        </footer>
+                            <footer class="entry-meta">
+                                <span>分类:
+                            {{ #category }}
+                                <a href="/category/{{&.}}" rel="category tag" class="link">{{&.}}</a>
+                            {{ /category }}
+                            </span>
+                                <span>标签：
+                            {{ #tags }}
+                                <a href="/tags/{{&.}}" rel="tag" class="link">{{&.}}</a>
+                            {{ /tags }}
+                            </span>
+                                <span>{{ &createDate10 }}</span>
+                            </footer>
+                        </div>
+
                     </div>
                 </article>
                 {{ /articleList }} {{ /articleList.length }}
