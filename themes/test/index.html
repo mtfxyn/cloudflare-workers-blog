@@ -42,11 +42,17 @@
             text-align: center;
             padding-top: 15px;
             margin: 200px 20px 200px 20px;
+            color: #ffffff;
         }
         
         body {
             display: flex;
             flex-direction: column;
+        }
+        
+        .background {
+            position: relative;
+            height: 100vh;
             background-image: url("https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/anime/raw/91269619_p0.webp");
             background-position: center;
             background-size: cover;
@@ -165,10 +171,25 @@
         .dark {
             --base-color: #505050;
             --base-title: #E6D4AB;
-            --base-white: #3a3a3a;
+            --base-white: #3b3b3b;
             --base-gery: #84898F;
             --base-black: #000000;
             --base-header: hsla(0, 0%, 100%, .75);
+        }
+        
+        .dark .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            /* 确保内容在遮罩上方 */
         }
     </style>
 
@@ -179,92 +200,95 @@
 </head>
 
 <body class="light">
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="content">
 
-    <div class="header">
-        <div class="darkness">
+            <div class="header">
+                <div class="darkness">
 
-            <div onclick="openDark(this)" class="box">
-                <div></div>
+                    <div onclick="openDark(this)" class="box">
+                        <div></div>
+                    </div>
+
+                    <script type="text/javascript">
+                        function openDark(box) {
+                            let body = document.body;
+                            if (box.state == null) {
+                                box.state = false;
+                            }
+                            if (box.state) {
+                                body.className = "light";
+                            } else {
+                                body.className = "dark";
+                            }
+                            box.state = !box.state;
+                        }
+                    </script>
+                </div>
+                <!-------------------------------------- 调色按钮 ---------------------------------->
+
+
             </div>
 
-            <script type="text/javascript">
-                function openDark(box) {
-                    let body = document.body;
-                    if (box.state == null) {
-                        box.state = false;
-                    }
-                    if (box.state) {
-                        body.className = "light";
-                    } else {
-                        body.className = "dark";
-                    }
-                    box.state = !box.state;
-                }
-            </script>
-        </div>
-        <!-------------------------------------- 调色按钮 ---------------------------------->
 
 
-    </div>
+            <div class="main">
+                <h1>
+                    mtfxyn's Blog
+                </h1>
+                <p class="lilaoshi">你看那通天的巨塔，每时每刻都有人往下跳。我小时候不懂，以为那是雪花。</p>
+            </div>
 
 
 
-    <div class="main">
-        <h1>
-            mtfxyn's Blog
-        </h1>
-        <p class="lilaoshi">你看那通天的巨塔，每时每刻都有人往下跳。我小时候不懂，以为那是雪花。</p>
-    </div>
+            <div class="articleList">
+                {{ #articleList.length }} {{ #articleList }}
+                <article id="post-{{&id}}">
+                    <div class="all">
+                        <header class="entry-header">
+                            <h2 class="entry-title">
+                                <div class="title">
+                                    <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="titlea">{{ &title }}</a>
+                                </div>
 
 
+                            </h2>
+                        </header>
+                        <p class="preview">
+                            {{ &contentText }} ...
+                        </p>
 
-    <div class="articleList">
-        {{ #articleList.length }} {{ #articleList }}
-        <article id="post-{{&id}}">
-            <div class="all">
-                <header class="entry-header">
-                    <h2 class="entry-title">
-                        <div class="title">
-                            <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="titlea">{{ &title }}</a>
-                        </div>
-
-
-                    </h2>
-                </header>
-                <p class="preview">
-                    {{ &contentText }} ...
-                </p>
-
-                <footer class="entry-meta">
-                    <span>分类:
+                        <footer class="entry-meta">
+                            <span>分类:
                         {{ #category }}
                             <a href="/category/{{&.}}" rel="category tag" class="link">{{&.}}</a>
                         {{ /category }}
                         </span>
-                    <span>标签：
+                            <span>标签：
                         {{ #tags }}
                             <a href="/tags/{{&.}}" rel="tag" class="link">{{&.}}</a>
                         {{ /tags }}
                         </span>
-                    <span>{{ &createDate10 }}</span>
-                </footer>
+                            <span>{{ &createDate10 }}</span>
+                        </footer>
+                    </div>
+                </article>
+                {{ /articleList }} {{ /articleList.length }}
+
             </div>
-        </article>
-        {{ /articleList }} {{ /articleList.length }}
+            <div class="footer">
+                <div>Copyright © 2024 mtfxyn 保留所有权利。</div>
+                <div>Powered by <a href="https://www.cloudflare.com" class="dibua">Cloudflare</a> &amp; <a href="https://blog.gezhong.vip" class="dibua">CF-Blog </a></div>
 
+
+
+
+
+            </div>
+
+        </div>
     </div>
-    <div class="footer">
-        <div>Copyright © 2024 mtfxyn 保留所有权利。</div>
-        <div>Powered by <a href="https://www.cloudflare.com" class="dibua">Cloudflare</a> &amp; <a href="https://blog.gezhong.vip" class="dibua">CF-Blog </a></div>
-
-
-
-
-
-    </div>
-
-
-
 </body>
 
 </html>
