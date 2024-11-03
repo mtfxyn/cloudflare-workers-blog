@@ -27,6 +27,39 @@
     /* 确保内容在遮罩上方 */
 }
 
+.articleMain {
+    min-height: 100vh;
+    background-color: var(--base-background);
+    border-radius: 1em;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.articleTitle {
+    background: var(--base-title);
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 300;
+}
+
+.articleText {
+    text-align: justify;
+    font-size: 20px;
+    line-height: 38px;
+    text-indent: 0em;
+    padding: 20px;
+    font-family: "Noto Serif SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--base-text)
+}
+
 .articleList {
     display: flex;
     min-height: 100vh;
@@ -35,11 +68,32 @@
     background-color: var(--base-color);
 }
 
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    background-color: var(--base-white);
+    color: var(--base-gery);
+}
+
+.left {
+    padding-right: 50px;
+}
+
+.right {
+    padding: 20px 0px 20px 50px;
+}
+
+.sakura-icon {
+    animation: slow-rotate 10s linear infinite;
+}
+
 .lilaoshi {
     font-size: small;
 }
 
-h1 {
+.bigtitle {
     font-weight: 300;
 }
 
@@ -68,6 +122,7 @@ h1 {
 body {
     display: flex;
     flex-direction: column;
+    margin: 0 !important;
 }
 
 .all {
@@ -78,18 +133,6 @@ body {
     padding: 8px 3px 8px 10px;
     margin: 0 auto;
     max-width: 900px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    bottom: 0;
-    background-color: var(--base-white);
-    color: var(--base-gery);
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .link {
@@ -118,19 +161,6 @@ img {
     border-radius: 4px;
 }
 
-.article {
-    margin-top: 23px;
-    text-align: justify;
-    font-size: 20px;
-    line-height: 38px;
-    text-indent: 0em;
-    padding: 20px;
-    font-family: "Noto Serif SC", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
 
 /* ---------------------------------------------------分割线----------以下是调色按钮-------------------- */
 
@@ -140,9 +170,9 @@ img {
 
 .light .box {
     width: 80px;
-    height: 35px;
-    background: #fdd6df;
-    border-radius: 30px;
+    height: 36px;
+    background: #ececec;
+    border-radius: 17px;
     display: flex;
     align-items: center;
     position: absolute;
@@ -155,15 +185,15 @@ img {
     left: 5px;
     width: 30px;
     height: 30px;
-    border-radius: 25px;
-    background: pink url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/sun.png) 5px 5px no-repeat;
+    border-radius: 17px;
+    background: #c4cbcf url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/sun.png) 5px 5px no-repeat;
     background-size: 20px 20px;
 }
 
 .dark .box {
     width: 80px;
-    height: 35px;
-    background: rgba(70, 70, 70, 1);
+    height: 36px;
+    background: rgb(0, 0, 0);
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -186,19 +216,30 @@ img {
 /* ---------------------------------------------------分割线--------以下是调色板---------------------- */
 
 .light {
-    --base-color: #f7f8fa;
-    --base-title: #E6D4AB;
+    --base-background: #f7f8fa;
+    --base-title: #baccd9;
     --base-white: #ffffff;
     --base-gery: #84898F;
     --base-black: #000000;
     --base-header: hsla(0, 0%, 100%, .75);
+    --base-text: #000000;
 }
 
 .dark {
-    --base-color: #505050;
-    --base-title: #E6D4AB;
+    --base-background: #505050;
+    --base-title: #619ac3;
     --base-white: #3b3b3b;
     --base-gery: #84898F;
     --base-black: #000000;
-    --base-header: hsla(0, 0%, 100%, .75);
+    --base-header: hsla(0, 0%, 30%, 0.75);
+    --base-text: #ffffff;
+}
+
+@keyframes slow-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
