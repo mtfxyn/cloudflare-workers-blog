@@ -1,7 +1,24 @@
-<style>* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.background {
+    position: relative;
+    background-image: url("https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/anime/raw/91269619_p0.webp");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.dark .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .lilaoshi {
@@ -37,14 +54,6 @@ h1 {
 body {
     display: flex;
     flex-direction: column;
-}
-
-.background {
-    position: relative;
-    background-image: url("https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/anime/raw/91269619_p0.webp");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 .all {
@@ -180,19 +189,8 @@ img {
     --base-header: hsla(0, 0%, 100%, .75);
 }
 
-.dark .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 .content {
     position: relative;
     z-index: 1;
     /* 确保内容在遮罩上方 */
 }
-
-</style>
