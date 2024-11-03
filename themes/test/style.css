@@ -21,6 +21,20 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.content {
+    position: relative;
+    z-index: 1;
+    /* 确保内容在遮罩上方 */
+}
+
+.articleList {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--base-color);
+}
+
 .lilaoshi {
     font-size: small;
 }
@@ -187,10 +201,4 @@ img {
     --base-gery: #84898F;
     --base-black: #000000;
     --base-header: hsla(0, 0%, 100%, .75);
-}
-
-.content {
-    position: relative;
-    z-index: 1;
-    /* 确保内容在遮罩上方 */
 }
