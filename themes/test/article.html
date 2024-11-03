@@ -21,34 +21,40 @@
             font-size: small;
         }
         
-        h2 {
-            line-height: 46px;
-            font-size: 38px;
+        h1 {
+            font-weight: 300;
         }
         
         .title {
-            background: #E6D4AB;
+            background: var(--base-title);
             border-radius: 10px;
             /* 去下划线 */
-            text-decoration: none;
-            padding: 10px;
+            padding: 1px 10px 4px 10px;
             margin-bottom: 15px;
-            color: #ffffff;
-            margin-top: 20px;
+        }
+        
+        .titlea {
+            text-decoration: none;
+            color: var(--base-white);
         }
         
         .main {
             display: flex;
             flex-direction: column;
             text-align: center;
-            color: #ffffff;
             padding-top: 15px;
             margin: 200px 20px 200px 20px;
+            color: #ffffff;
         }
         
         body {
             display: flex;
             flex-direction: column;
+        }
+        
+        .background {
+            position: relative;
+            height: 100vh;
             background-image: url("https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/anime/raw/91269619_p0.webp");
             background-position: center;
             background-size: cover;
@@ -56,6 +62,7 @@
         }
         
         .all {
+            background-color: var(--base-white);
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             border-radius: 1em;
             /*  圆角 */
@@ -64,7 +71,7 @@
             max-width: 900px;
             margin-top: 20px;
             margin-bottom: 20px;
-            background: hsla(0, 0%, 100%, .75);
+            min-height: 100vh;
         }
         
         .footer {
@@ -72,17 +79,37 @@
             flex-direction: column;
             align-items: center;
             bottom: 0;
-            background-color: white;
-            color: #84898F;
-            border-radius: 10px 10px 0px 0px;
-            margin-left: 20px;
-            margin-right: 20px;
+            background-color: var(--base-white);
+            color: var(--base-gery);
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
         
         .link {
-            color: #000000;
+            color: var(--base-black);
             text-decoration: none;
+        }
+        
+        .dibua {
+            color: #84898F;
+        }
+        
+        .preview {
+            line-height: 25px;
+            padding-top: 10px;
+        }
+        
+        .articleList {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            border-radius: 10px 10px 0px 0px;
+            background-color: var(--base-color);
+        }
+        
+        .header {
+            display: flex;
+            height: 50px;
+            background: var(--base-header);
         }
         
         img {
@@ -103,32 +130,162 @@
             font-weight: 400;
             font-style: normal;
         }
+        /* ---------------------------------------------------分割线----------以下是调色按钮-------------------- */
+        
+        .box>div {
+            transition: all 200ms ease;
+        }
+        
+        .light .box {
+            width: 80px;
+            height: 35px;
+            background: #fdd6df;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+        
+        .light .box>div {
+            position: absolute;
+            left: 5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 25px;
+            background: pink url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/sun.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
+        
+        .dark .box {
+            width: 80px;
+            height: 35px;
+            background: rgba(70, 70, 70, 1);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+        
+        .dark .box>div {
+            position: absolute;
+            left: 45px;
+            width: 30px;
+            height: 30px;
+            border-radius: 25px;
+            background: rgba(50, 50, 50, 1) url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/moon.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
+        /* ---------------------------------------------------分割线--------以下是调色板---------------------- */
+        
+        .light {
+            --base-color: #f7f8fa;
+            --base-title: #E6D4AB;
+            --base-white: #ffffff;
+            --base-gery: #84898F;
+            --base-black: #000000;
+            --base-header: hsla(0, 0%, 100%, .75);
+        }
+        
+        .dark {
+            --base-color: #505050;
+            --base-title: #E6D4AB;
+            --base-white: #3b3b3b;
+            --base-gery: #84898F;
+            --base-black: #000000;
+            --base-header: hsla(0, 0%, 100%, .75);
+        }
+        
+        .dark .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            /* 确保内容在遮罩上方 */
+        }
     </style>
 
     <meta name="description" content="这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。大家可以在这里找到许多欢乐。">
     <meta name="keywords" content="互联网技术, 技术分享, 前端开发, 技术博客, IT资讯, 二次元, 动漫, 摄影, 网盘, 资源分享, 资源, 软件">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
+    <script type="text/javascript">
+        // 页面加载时检查 localStorage 中的值并设置初始状态
+        window.onload = () => {
+            const colorMode = localStorage.getItem('colorMode');
+            if (colorMode === 'dark') {
+                document.body.classList.add('dark'); // 设置为深色模式
+            } else {
+                document.body.classList.add('light'); // 设置为亮色模式
+            }
+        };
+
+        function openDark() {
+            const body = document.body;
+            // 检查当前模式
+            if (body.classList.contains('dark')) {
+                body.classList.remove('dark');
+                body.classList.add('light');
+                localStorage.removeItem('colorMode'); // 移除模式
+            } else {
+                body.classList.remove('light');
+                body.classList.add('dark');
+                localStorage.setItem('colorMode', 'dark'); // 存储模式
+            }
+        }
+    </script>
+
+
+
 </head>
 
 <body>
-    <div class="all">
-        <div class="title">
-            <h2>{{ &articleSingle.title }}</h2>
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="header">
+                <div class="darkness">
+
+                    <div onclick="openDark(this)" class="box">
+                        <div></div>
+                    </div>
+
+
+                </div>
+                <!-------------------------------------- 调色按钮 ---------------------------------->
+
+
+            </div>
+
+
+            <div class="all">
+                <div class="title">
+                    <h2>{{ &articleSingle.title }}</h2>
+                </div>
+                <div class="article">
+                    {{ &articleSingle.contentHtml }}
+                </div>
+
+            </div>
+            <div class="footer">
+                <div>Copyright © 2024 mtfxyn 保留所有权利。</div>
+                <div>Powered by <a href="https://www.cloudflare.com" class="dibua">Cloudflare</a> &amp; <a href="https://blog.gezhong.vip" class="dibua">CF-Blog </a></div>
+
+
+
+
+
+            </div>
         </div>
-        <div class="article">
-            {{ &articleSingle.contentHtml }}
-        </div>
-
     </div>
-    <div class="footer">
-        <div>Copyright © 2024 mtfxyn 保留所有权利。</div>
-        <div>Powered by <a href="https://www.cloudflare.com" class="dibua">Cloudflare</a> &amp; <a href="https://blog.gezhong.vip" class="dibua">CF-Blog </a></div>
-
-
-
-
-
-    </div>
-
 </body>
