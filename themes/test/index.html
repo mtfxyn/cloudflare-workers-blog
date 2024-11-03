@@ -27,9 +27,12 @@
             background: var(--base-title);
             border-radius: 10px;
             /* 去下划线 */
-            text-decoration: none;
             padding: 1px 10px 4px 10px;
             margin-bottom: 15px;
+        }
+        
+        .titlea {
+            text-decoration: none;
             color: var(--base-white);
         }
         
@@ -221,8 +224,10 @@
             <div class="all">
                 <header class="entry-header">
                     <h2 class="entry-title">
+                        <div class="title">
+                            <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="titlea">{{ &title }}</a>
+                        </div>
 
-                        <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="title">{{ &title }}</a>
 
                     </h2>
                 </header>
