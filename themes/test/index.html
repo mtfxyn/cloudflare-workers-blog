@@ -70,9 +70,6 @@
             bottom: 0;
             background-color: white;
             color: #84898F;
-            border-radius: 10px 10px 0px 0px;
-            margin-left: 20px;
-            margin-right: 20px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
         
@@ -97,6 +94,69 @@
             border-radius: 10px 10px 0px 0px;
             background-color: #f7f8fa;
         }
+        
+        .header {
+            display: flex;
+            height: 50px;
+            background: hsla(0, 0%, 100%, .75);
+        }
+        /* ---------------------------------------------------分割线------------------------------ */
+        
+        .box>div {
+            transition: all 200ms ease;
+        }
+        
+        .light {
+            background: pink;
+        }
+        
+        .light .box {
+            width: 80px;
+            height: 30px;
+            background: #fdd6df;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        
+        .light .box>div {
+            position: absolute;
+            left: 5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 25px;
+            background: pink url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/sun.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
+        
+        .dark {
+            background: rgba(50, 50, 50, 1);
+        }
+        
+        .dark .box {
+            width: 80px;
+            height: 30px;
+            background: rgba(70, 70, 70, 1);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        
+        .dark .box>div {
+            position: absolute;
+            left: 45px;
+            width: 30px;
+            height: 30px;
+            border-radius: 25px;
+            background: rgba(50, 50, 50, 1) url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/moon.png) 5px 5px no-repeat;
+            background-size: 20px 20px;
+        }
     </style>
 
     <meta name="description" content="这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。大家可以在这里找到许多欢乐。">
@@ -105,7 +165,37 @@
     <meta name="robots" content="index, follow">
 </head>
 
-<body>
+<body class="light">
+
+    <div class="header">
+        <div class="darkness">
+
+            <div onclick="openDark(this)" class="box">
+                <div></div>
+            </div>
+
+            <script type="text/javascript">
+                function openDark(box) {
+                    let body = document.body;
+                    if (box.state == null) {
+                        box.state = false;
+                    }
+                    if (box.state) {
+                        body.className = "light";
+                    } else {
+                        body.className = "dark";
+                    }
+                    box.state = !box.state;
+                }
+            </script>
+        </div>
+
+
+
+    </div>
+
+
+
     <div class="main">
         <h1>
             mtfxyn's Blog
@@ -115,7 +205,7 @@
 
 
 
-    <div class="articleList">
+    <div>
         {{ #articleList.length }} {{ #articleList }}
         <article id="post-{{&id}}">
             <div class="all">
@@ -146,6 +236,7 @@
             </div>
         </article>
         {{ /articleList }} {{ /articleList.length }}
+
     </div>
     <div class="footer">
         <div>Copyright © 2024 mtfxyn 保留所有权利。</div>
