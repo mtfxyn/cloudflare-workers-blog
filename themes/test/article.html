@@ -15,6 +15,39 @@
     <meta name="keywords" content="互联网技术, 技术分享, 前端开发, 技术博客, IT资讯, 二次元, 动漫, 摄影, 网盘, 资源分享, 资源, 软件">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .background {
+            position: relative;
+            background-image: url("https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/yasuo/DSC_0699.webp");
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .dark .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            /* 确保内容在遮罩上方 */
+        }
+    </style>
+
+
+
     <!-- js脚本区 -->
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
