@@ -36,7 +36,7 @@
     <meta name="author" content="LittleGhost" />
     <meta name="description" content="MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。" />
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/anime/raw/title-imageonline.co-7726362.webp" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,35 +50,11 @@
 
 
 
-    <link rel="alternate" type="application/atom&#43;xml" href="https://blog.littleghost.ml/atom.xml" title="mtfxyn's Blog" />
-    <link rel="alternate" type="application/rss&#43;xml" href="https://blog.littleghost.ml/rss.xml" title="mtfxyn's Blog" />
 
 
 
-    <link rel="canonical" href="https://blog.littleghost.ml/" />
 
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "datePublished": "2023-09-16T22:46:34+08:00",
-            "dateModified": "2024-03-17T22:15:19+08:00",
-            "url": "https://blog.littleghost.ml/",
-            "description": "MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。",
-            "image": "https://blog.littleghost.ml/icons/apple-touch-icon.png",
-            "author": {
-                "@type": "Person",
-                "description": "新晋的信息安全小鬼头",
-                "email": "785340571@qq.com",
-                "image": "https://blog.littleghost.ml/icons/apple-touch-icon.png",
-                "url": "https://blog.littleghost.ml",
-                "name": "LittleGhost"
-            },
-            "license": "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)",
-            "name": "mtfxyn's Blog"
-        }
-    </script>
 
 
 
@@ -89,13 +65,6 @@
 
 
 
-    <meta property="og:title" content="mtfxyn's Blog" />
-    <meta property="og:description" content="MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。" />
-    <meta property="og:url" content="https://blog.littleghost.ml/" />
-    <meta property="og:site_name" content="mtfxyn's Blog" />
-    <meta property="og:locale" content="zh" />
-    <meta property="og:image" content="https://blog.littleghost.ml/icons/apple-touch-icon.png" />
-    <meta property="og:type" content="website" />
 
 
 
@@ -259,7 +228,10 @@
                 <div>Copyright © 2024 mtfxyn All Rights Reserved.</div>
                 <div>Powered by <a href="https://www.cloudflare.com">Cloudflare</a> &amp; <a href="https://github.com/gdtool/cloudflare-workers-blog">CF-Blog </a></div>
                 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-
+                <div id="data-display">
+                    <!-- 提取的数据将显示在这里 -->
+                    <p>正在加载数据...</p>
+                </div>
             </div>
 
 
@@ -304,7 +276,41 @@
 
 
 
+    <script>
+        // 向目标 URL 发起请求并提取数据
+        fetch('https://www.mtfxyn.eu.org/cdn-cgi/trace')
+            .then(response => response.text())
+            .then(traceData => {
+                // 解析返回的 trace 数据
+                const parsedData = {};
+                traceData.trim().split("\n").forEach(line => {
+                    const [key, value] = line.split("=");
+                    parsedData[key.trim()] = value.trim();
+                });
 
+                // 需要展示的字段
+                const fieldsToDisplay = ["ip", "colo", "http", "tls", "loc", "sni"];
+                const dataDisplay = document.getElementById("data-display");
+
+                // 清空当前显示内容
+                dataDisplay.innerHTML = '';
+
+                // 动态生成并显示提取的字段
+                fieldsToDisplay.forEach(field => {
+                    const value = parsedData[field] || "N/A"; // 如果没有值则显示 N/A
+                    const dataItem = document.createElement("div");
+                    dataItem.className = "data-item";
+                    dataItem.innerHTML = `<span>${field.toUpperCase()}:</span> <span class="data-value">${value}</span>`;
+                    dataDisplay.appendChild(dataItem);
+                });
+            })
+            .catch(error => {
+                // 如果请求失败，显示错误信息
+                const dataDisplay = document.getElementById("data-display");
+                dataDisplay.innerHTML = '<p>无法加载数据，请稍后再试。</p>';
+                console.error('Error fetching trace data:', error);
+            });
+    </script>
 </body>
 
 </html>
