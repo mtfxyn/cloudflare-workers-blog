@@ -1963,7 +1963,6 @@ article.content.post.home {
 
 .left {
     padding-right: 5%;
-    font-family: "Noto Serif SC", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -1992,5 +1991,6 @@ article.content.post.home {
 .data-display {
     font-size: 1.6vh;
     display: flex;
-    background-color: hsla(var(--color-contrast-medium-h), var(--color-contrast-medium-s), var(--color-contrast-medium-l), 0.5)
+    background-color: rgb(29, 30, 32);
+    color: floralwhite
 }
