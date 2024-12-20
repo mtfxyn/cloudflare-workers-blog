@@ -462,7 +462,7 @@ body {
 }
 
 #theme-switcher {
-    color: var(--color-contrast-medium);
+    color: var(--color-contrast-high);
     transition: color .5s;
     z-index: 4
 }
@@ -505,7 +505,8 @@ body {
 }
 
 .site-brand {
-    margin-right: 1em
+    margin-right: 1em;
+    display: flex
 }
 
 .brand {
@@ -1967,7 +1968,7 @@ article.content.post.home {
     font-weight: 400;
     font-style: normal;
     color: var(--base-text);
-    font-size: 1.6vh;
+    font-size: 1.5vh;
 }
 
 .right {
@@ -1991,6 +1992,48 @@ article.content.post.home {
 .data-display {
     font-size: 1.6vh;
     display: flex;
-    background-color: rgb(29, 30, 32);
-    color: floralwhite
+    background-color: hsla(var(--color-contrast-lower-h), var(--color-contrast-lower-s), var(--color-contrast-lower-l), 1.0);
+    color: var(--base-gery);
+}
+
+.logo-switches {
+    flex-wrap: inherit;
+    margin-left: 3px;
+}
+
+button,
+input,
+textarea {
+    padding: 0;
+    font: inherit;
+    background: 0 0;
+    border: 0
+}
+
+button,
+input[type=button],
+input[type=submit] {
+    cursor: pointer;
+}
+
+
+/* 默认（亮模式） */
+
+#moon {
+    display: none;
+}
+
+#sun {
+    display: inline-block;
+}
+
+
+/* 暗模式下显示月亮图标，隐藏太阳图标 */
+
+[data-theme="dark"] #moon {
+    display: inline-block;
+}
+
+[data-theme="dark"] #sun {
+    display: none;
 }

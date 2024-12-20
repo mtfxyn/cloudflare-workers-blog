@@ -1,53 +1,153 @@
-const throttle = (e, t) => {
-        let s, o, n;
-        return function() {
-            const i = this,
-                a = arguments;
-            s ? (clearTimeout(o), o = setTimeout(function() { Date.now() - n >= t && (e.apply(i, a), n = Date.now()) }, Math.max(t - (Date.now() - n), 0))) : (e.apply(i, a), n = Date.now(), s = !0)
+// Throttle函数
+const throttle = (fn, delay) => {
+    let timeout, lastRun;
+    return function() {
+        const context = this;
+        const args = arguments;
+        if (lastRun) {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                if (Date.now() - lastRun >= delay) {
+                    fn.apply(context, args);
+                    lastRun = Date.now();
+                }
+            }, Math.max(delay - (Date.now() - lastRun), 0));
+        } else {
+            fn.apply(context, args);
+            lastRun = Date.now();
         }
-    },
-    delayTime = 420;
-window.addEventListener("DOMContentLoaded", e => {
-    const t = document.querySelector(".header");
-    if (t) {
-        const e = window.getComputedStyle(t, null).getPropertyValue("height");
-        document.documentElement.style.setProperty("--header-height", e)
-    }
-}, { once: !0 }), window.addEventListener("DOMContentLoaded", e => {
-    const n = document.querySelector(".nav-toggle"),
-        o = document.createElement("div");
-    o.className = "nav-toggle-inner", n.appendChild(o);
-    for (let e = 0; e < 3; e++) {
-        const t = document.createElement("span");
-        o.appendChild(t)
-    }
-    const s = document.getElementById("nav-toggle"),
-        t = document.querySelector(".header"),
-        i = document.querySelector(".nav-curtain");
-    s.addEventListener("change", e => { e.target.checked ? (t.classList.add("open"), n.classList.add("open"), t.classList.remove("fade"), i.style = "display: block") : (t.classList.remove("open"), n.classList.remove("open"), t.classList.add("fade")) }), i.addEventListener("animationend", e => { s.checked || e.target.removeAttribute("style") }), window.addEventListener("scroll", throttle(function() { l() }, delayTime));
-    const r = window.getComputedStyle(document.documentElement, null).getPropertyValue("--max-width");
-    let c = window.matchMedia(`(max-width: ${r})`);
-    c.addListener(e => { e.matches || a(!0) });
+    };
+};
 
-    function l() {
-        const e = document.getElementById("search-input");
-        if (e && e === document.activeElement) return;
-        a()
+// 延迟时间
+const delayTime = 420;
+
+// 页面加载完成后设置header高度
+window.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".header");
+    if (header) {
+        const headerHeight = window.getComputedStyle(header, null).getPropertyValue("height");
+        document.documentElement.style.setProperty("--header-height", headerHeight);
+    }
+}, { once: true });
+
+// 设置主题切换按钮
+window.addEventListener("DOMContentLoaded", () => {
+    const userPrefers = localStorage.getItem("theme");
+
+    if (userPrefers === "dark") {
+        changeModeMeta("dark");
+    } else if (userPrefers === "light") {
+        changeModeMeta("light");
+    } else {
+        // 检查系统偏好
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        changeModeMeta(prefersDark ? "dark" : "light");
     }
 
-    function a(e) { s.checked && (s.checked = !1, t.classList.remove("open"), n.classList.remove("open"), e ? i.removeAttribute("style") : t.classList.add("fade")) }
-}, { once: !0 }), window.addEventListener("DOMContentLoaded", e => {
-    const t = document.getElementById("back-to-top");
-    t !== null && window.addEventListener("scroll", throttle(function() { window.scrollY > 100 ? t.classList.add("show") : t.classList.remove("show") }, delayTime))
-}, { once: !0 });
-const userPrefers = localStorage.getItem("theme");
-userPrefers === "dark" ? changeModeMeta("dark") : userPrefers === "light" && changeModeMeta("light"), window.matchMedia("(prefers-color-scheme: dark)").addListener(e => { changeMode() }), window.addEventListener("DOMContentLoaded", e => {
-    changeMode();
-    const t = document.getElementById("theme-switcher");
-    t && t.addEventListener("click", e => { e.preventDefault(), changeModeMeta(getCurrentTheme() == "dark" ? "light" : "dark"), changeMode(), storePrefers() })
-}, { once: !0 }), window.addEventListener("storage", function(e) {
+    const themeSwitcher = document.getElementById("theme-switcher");
+    if (themeSwitcher) {
+        themeSwitcher.addEventListener("click", (e) => {
+            e.preventDefault();
+            const newTheme = getCurrentTheme() === "dark" ? "light" : "dark";
+            changeModeMeta(newTheme);
+            changeMode();
+            storePrefers(newTheme);
+        });
+    }
+
+    // 监听系统颜色偏好变化
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(() => {
+        changeMode();
+    });
+}, { once: true });
+
+// 更新当前页面主题
+function getCurrentTheme() {
+    return document.documentElement.getAttribute("data-theme");
+}
+
+
+// 存储用户偏好设置
+function storePrefers(theme) {
+    window.localStorage.setItem("theme", theme);
+}
+
+// 导航菜单的逻辑
+window.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navCurtain = document.querySelector(".nav-curtain");
+    const header = document.querySelector(".header");
+    if (navToggle) {
+        const innerDiv = document.createElement("div");
+        innerDiv.className = "nav-toggle-inner";
+        navToggle.appendChild(innerDiv);
+        for (let i = 0; i < 3; i++) {
+            const span = document.createElement("span");
+            innerDiv.appendChild(span);
+        }
+
+        navToggle.addEventListener("change", (e) => {
+            if (e.target.checked) {
+                header.classList.add("open");
+                navToggle.classList.add("open");
+                header.classList.remove("fade");
+                navCurtain.style = "display: block";
+            } else {
+                header.classList.remove("open");
+                navToggle.classList.remove("open");
+                header.classList.add("fade");
+            }
+        });
+
+        navCurtain.addEventListener("animationend", (e) => {
+            if (!navToggle.checked) {
+                navCurtain.removeAttribute("style");
+            }
+        });
+
+        window.addEventListener("scroll", throttle(() => {
+            if (document.getElementById("search-input") !== document.activeElement) {
+                closeNav();
+            }
+        }, delayTime));
+    }
+
+    const maxWidth = window.getComputedStyle(document.documentElement, null).getPropertyValue("--max-width");
+    const mediaQuery = window.matchMedia(`(max-width: ${maxWidth})`);
+    mediaQuery.addListener((e) => {
+        if (!e.matches) closeNav(true);
+    });
+
+    function closeNav(force = false) {
+        if (navToggle.checked) {
+            navToggle.checked = false;
+            header.classList.remove("open");
+            navToggle.classList.remove("open");
+            if (!force) header.classList.add("fade");
+        }
+    }
+}, { once: true });
+
+// 返回顶部按钮的显示逻辑
+window.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.getElementById("back-to-top");
+    if (backToTopButton) {
+        window.addEventListener("scroll", throttle(() => {
+            if (window.scrollY > 100) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        }, delayTime));
+    }
+}, { once: true });
+
+// 监听 localStorage 变化，动态更新主题
+window.addEventListener("storage", (e) => {
     if (e.key !== "theme") return;
-    changeModeMeta(e.newValue === "dark" ? "dark" : "light"), changeMode()
+    changeModeMeta(e.newValue === "dark" ? "dark" : "light");
+    changeMode();
 });
 
 function getCurrentTheme() { return JSON.parse(window.getComputedStyle(document.documentElement, null).getPropertyValue("--theme-name")) }
