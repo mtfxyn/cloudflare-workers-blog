@@ -67,7 +67,17 @@ function getCurrentTheme() {
     return document.documentElement.getAttribute("data-theme");
 }
 
+// 设置主题
+function changeMode() {
+    const isDarkMode = getCurrentTheme() === "dark";
+    const themeColor = isDarkMode ? "#16171d" : "#ffffff";
+    document.querySelector('meta[name="theme-color"]').setAttribute("content", themeColor);
+}
 
+// 设置 meta 中的 data-theme 属性
+function changeModeMeta(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+}
 // 存储用户偏好设置
 function storePrefers(theme) {
     window.localStorage.setItem("theme", theme);
