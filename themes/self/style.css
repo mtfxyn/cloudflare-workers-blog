@@ -1,0 +1,294 @@
+.articleMain {
+    min-height: 100vh;
+    background-color: var(--base-background);
+    border-radius: 1em;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 1% 20px 1%;
+}
+
+.articleTitle {
+    background: var(--base-title);
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 300;
+}
+
+.articleText {
+    text-align: justify;
+    font-size: 20px;
+    line-height: 38px;
+    text-indent: 0em;
+    padding: 20px 2% 20px 2%;
+    font-family: "Noto Serif SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--base-text)
+}
+
+.articleList {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    border-radius: 10px 10px 0px 0px;
+    background-color: var(--base-background);
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+    background-color: var(--base-white);
+    color: var(--base-gery);
+}
+
+.left {
+    padding-right: 5%;
+    font-family: "Noto Serif SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--base-text);
+    font-size: 1.6vh;
+}
+
+.right {
+    padding: 20px 0px 20px 0px;
+    padding-left: 5%;
+}
+
+.sakura-icon {
+    animation: slow-rotate 10s linear infinite;
+}
+
+.indextext {
+    color: var(--base-text)
+}
+
+.lilaoshi {
+    font-size: small;
+}
+
+.bigtitle {
+    font-weight: 300;
+}
+
+.title {
+    background: var(--base-title);
+    border-radius: 10px;
+    /* 去下划线 */
+    padding: 1px 10px 4px 10px;
+    margin-bottom: 15px;
+}
+
+.titlea {
+    text-decoration: none;
+    color: var(--base-white);
+}
+
+a {
+    color: var(--base-text);
+    text-decoration: none;
+    color: inherit;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 15px;
+    margin: 30% 20px 30% 20px;
+    color: var(--base-bigtitle);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--base-white);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 1em;
+    /*  圆角 */
+    padding: 8px 3px 8px 10px;
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.link {
+    color: var(--base-black);
+    text-decoration: none;
+}
+
+.dibua {
+    color: #84898F;
+}
+
+.preview {
+    line-height: 25px;
+    padding-top: 10px;
+}
+
+.header {
+    display: flex;
+    height: 50px;
+    background: var(--base-header);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+/* ---------------------------------------------------分割线----------以下是调色按钮-------------------- */
+
+.box>div {
+    transition: all 200ms ease;
+}
+
+.light .box {
+    width: 80px;
+    height: 36px;
+    background: #ececec;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+
+.light .box>div {
+    position: absolute;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 17px;
+    background: #c4cbcf url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/sun.png) 5px 5px no-repeat;
+    background-size: 20px 20px;
+}
+
+.dark .box {
+    width: 80px;
+    height: 36px;
+    background: rgb(27, 27, 27);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 20px;
+}
+
+.dark .box>div {
+    position: absolute;
+    left: 45px;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    background: rgba(50, 50, 50, 1) url(https://cdn09022024.gitlink.org.cn/api/v1/repos/mtfxyn/photos/raw/www/moon.png) 5px 5px no-repeat;
+    background-size: 20px 20px;
+}
+
+
+/* ---------------------------------------------------分割线--------以下是调色板---------------------- */
+
+.light {
+    --base-background: #f7f8fa;
+    --base-title: #baccd9;
+    --base-white: #ffffff;
+    --base-gery: #84898F;
+    --base-black: #000000;
+    --base-header: hsla(0, 0%, 100%, .75);
+    --base-text: #000000;
+    --base-bigtitle: #000000;
+    background-image: url('https://pagescdn.mtfxyn.eu.org/img/bgday.webp');  
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.dark {
+    --base-background: #505050;
+    --base-title: #619ac3;
+    --base-white: #3b3b3b;
+    --base-gery: #84898F;
+    --base-black: #000000;
+    --base-header: hsla(0, 0%, 30%, 0.75);
+    --base-text: #ffffff;
+    --base-bigtitle: #fdfdfd;
+    background-image: url('https://pagescdn.mtfxyn.eu.org/img/bgnight.webp'); 
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+@keyframes slow-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/*底部*/
+
+    .provider {
+        display: flex;
+        align-items: center;
+        height: 1em; 
+        gap: 5px; 
+        text-decoration: none; 
+        font-size: 1em; 
+        color: inherit; 
+    }
+    .provider_list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; 
+        text-align: center;
+    }
+    .logo-icon {
+        height: 1em; 
+        width: auto;
+        vertical-align: middle;
+    }
+/*图标*/
+.flex {
+    display: flex;
+}
+.no-underline {
+    text-decoration-line: none;
+}
+.items-center {
+    align-items: center;
+}
+.text-cl1-brand-orange {
+    --tw-text-opacity: 1;
+    color: rgb(246 130 31 / var(--tw-text-opacity, 1));
+}
+.text-black {
+    color: #181818;
+}

@@ -1,0 +1,47 @@
+.provider {
+    display: flex;
+    align-items: center;
+    height: 1em;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    color: inherit;
+}
+
+.provider_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.logo-icon {
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+}
+
+
+/*图标*/
+
+.flex {
+    display: flex;
+}
+
+.no-underline {
+    text-decoration-line: none;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.text-cl1-brand-orange {
+    --tw-text-opacity: 1;
+    color: rgb(246 130 31 / var(--tw-text-opacity, 1));
+}
+
+.text-black {
+    color: #181818;
+}
