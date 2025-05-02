@@ -1179,42 +1179,40 @@
                                     <h3>{{ &title }}</h3>
                                 </a>
                             </div>
-                            <div class="post-excerpt">
-                                <div class="ai-excerpt-tip">
-                                    <i class="fa-solid fa-atom"></i>AI 摘要
-                                </div>
-                                {{ &contentText }} ...
-                            </div>
-                        </article>
-                        {{ /articleList }}
-                        <nav id="nav-below" class="navigation" role="navigation">
+                            <div class="ai-excerpt-tip"><i class="fa-solid fa-atom"></i>AI 摘要</div>
+                            {{ &contentText }} ...
+                </div>
 
-                            {{ #pageNewer }}
+                </article>
+                {{ /articleList }}
+                <nav id="nav-below" class="navigation" role="navigation">
 
-                            <div class="nav-previous alignleft stat-capsule link-capsule post-list-show">
-                                <a href="{{ &url }}">
-                                    <span class="meta-nav">←</span>上一页</a>
-                            </div>
-                            {{ /pageNewer }} {{ #pageOlder }}
-                            <div class="nav-next alignright stat-capsule link-capsule post-list-show">
+                    {{ #pageNewer }}
 
-                                <a href="{{ &url }}">下一页
-                                    <span class="meta-nav">→</span></a>
-                            </div>
-                            {{ /pageOlder }}
-                        </nav>
-                        {{ /articleList.length }}
-
-                    </main>
-
-                    <div id="pagination"></div>
-                    <div id="add_post">
-                        <span id="add_post_time" style="visibility: hidden;" title="233">
-                        </span>
+                    <div class="nav-previous alignleft stat-capsule link-capsule post-list-show">
+                        <a href="{{ &url }}">
+                            <span class="meta-nav">←</span>上一页</a>
                     </div>
+                    {{ /pageNewer }} {{ #pageOlder }}
+                    <div class="nav-next alignright stat-capsule link-capsule post-list-show">
+
+                        <a href="{{ &url }}">下一页
+                                    <span class="meta-nav">→</span></a>
+                    </div>
+                    {{ /pageOlder }}
+                </nav>
+                {{ /articleList.length }}
+
+                </main>
+
+                <div id="pagination"></div>
+                <div id="add_post">
+                    <span id="add_post_time" style="visibility: hidden;" title="233">
+                        </span>
                 </div>
             </div>
-            <!-- #content -->
+        </div>
+        <!-- #content -->
         </div>
         <!-- #page Pjax container-->
         <footer id="colophon" class="site-footer" role="contentinfo">
