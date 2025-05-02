@@ -1139,24 +1139,27 @@
                         <article class="post post-list-thumb" style="" itemscope="" itemtype="http://schema.org/BlogPosting">
                             <div class="post-thumb">
                                 <a href="/article/{{&id}}/{{&link}}.html">
-                                    <img alt="post_img" class="lazyload" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/basic/puff-load.svg#lazyload-blur" data-src="https://kiseki.blog/wp-content/uploads/2023/04/1729154044-图片4-1024x615.png.webp" /> </a>
+                                    <img alt="post_img" class="lazyload" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/basic/puff-load.svg#lazyload-blur" data-src="{{ &img }}" />
+                                </a>
                             </div>
-                            <!-- thumbnail-->
                             <div class="post-date">
-                                <i class="fa-regular fa-clock"></i>发布于 {{ &createDate10 }} </div>
+                                <i class="fa-regular fa-clock"></i>发布于 {{ &createDate10 }}
+                            </div>
                             <div class="post-meta">
-                                <span class="meta-author"><a href="https://kiseki.blog/author/hitomi/">
-                                    <img alt='染川瞳' src='https://weavatar.com/avatar/ad83914788f8a7d5550d98eb774439e9f656fa5ee40135988d8da89ee2336f55?s=16&#038;d=mm&#038;r=g' srcset='https://weavatar.com/avatar/ad83914788f8a7d5550d98eb774439e9f656fa5ee40135988d8da89ee2336f55?s=32&#038;d=mm&#038;r=g 2x' class='avatar avatar-16 photo avatar' height='16' width='16' decoding='async'/></a><a rel="author" title="染川瞳" href="https://kiseki.blog/author/hitomi/">染川瞳</a></span><span><i class="fa-regular fa-folder"></i> <a href="https://kiseki.blog/record/">记录</a></span>
-                                <span class="comments-number">
-                                    <i class="fa-regular fa-comment"></i>
-                                   </span><span><i class="fa-regular fa-eye"></i>9644 热度</span><span><i class="fa-regular fa-pen-to-square"></i>3448 字</span><span title="预计阅读时间"><i class="fa-solid fa-hourglass"></i>16 分钟</span>                                </div>
+                                <span><i class="fa-regular fa-folder"></i> 
+                                    {{ #category }}
+                                    <a href="/category/{{&.}}">{{&.}}</a></span> {{ /category }}
+                                <span><i class="fa-regular fa-eye"></i>9644 热度</span>
+                                <span><i class="fa-regular fa-pen-to-square"></i>3448 字</span>
+                                <span title="预计阅读时间"><i class="fa-solid fa-hourglass"></i>16 分钟</span>
+                            </div>
                             <div class="post-title" style="font-family: &#039;Kaisei Decol&#039;;">
-                                <a href="https://kiseki.blog/2023/04/15/just-talk-about-chatgpt/">
+                                <a href="/article/{{&id}}/{{&link}}.html">
                                     <h3>{{ &title }}</h3>
                                 </a>
                             </div>
                             <div class="post-excerpt">
-                                <div class="ai-excerpt-tip"><i class="fa-solid fa-atom"></i>AI 摘要</div>
+                                <div class="ai-excerpt-tip"><i class="fa-solid fa-atom"></i>简介</div>
                                 {{ &contentText }} ...</div>
                         </article>
                         {{ /articleList }}
