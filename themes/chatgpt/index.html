@@ -1144,7 +1144,7 @@
                             </div>
                             <!-- thumbnail -->
                             <div class="post-date">
-                                <i class="fa-regular fa-clock"></i>发布于 {{postDate}}
+                                <i class="fa-regular fa-clock"></i>发布于{{ &createDate10 }}
                             </div>
                             <div class="post-meta">
                                 <span class="meta-author">
@@ -1188,20 +1188,20 @@
                         </article>
                         {{ /articleList }}
                         <nav id="nav-below" class="navigation" role="navigation">
-                            <div class="assistive-text">文章分页</div>
+
                             {{ #pageNewer }}
 
-                            <div class="nav-previous alignleft">
+                            <div class="nav-previous alignleft stat-capsule link-capsule post-list-show">
                                 <a href="{{ &url }}">
                                     <span class="meta-nav">←</span>上一页</a>
                             </div>
-                            {{ /pageNewer }}
+                            {{ /pageNewer }} {{ #pageOlder }}
+                            <div class="nav-next alignright stat-capsule link-capsule post-list-show">
 
-                            <div class="nav-next alignright">
-                                {{ #pageOlder }}
                                 <a href="{{ &url }}">下一页
-                                    <span class="meta-nav">→</span></a> {{ /pageOlder }}
+                                    <span class="meta-nav">→</span></a>
                             </div>
+                            {{ /pageOlder }}
                         </nav>
                         {{ /articleList.length }}
 
