@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="https://wkphoto.cdn.bcebos.com/b2de9c82d158ccbf0917b45509d8bc3eb1354131.jpg" />
     <link rel="shortcut icon" type="image/x-icon" href="https://wkphoto.cdn.bcebos.com/b2de9c82d158ccbf0917b45509d8bc3eb1354131.jpg" />
     <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cfcdn.20090217.xyz/editormd.css" />
+    <link rel="stylesheet" href="https://unpkg.com/editor.md@1.5.0/css/editormd.css" />
     <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap-select/1.9.4/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap-select/1.13.14/css/bootstrap-select.min.css">
 
@@ -93,7 +93,7 @@
 
     </div>
 
-    <script src="https://cfcdn.20090217.xyz/editormd/editormd.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/editor-md/1.5.0/editormd.js"></script>
     <script type="text/javascript">
         $(function() {
             $('#myTab li:eq(0) a').tab('show');
@@ -106,7 +106,7 @@
                     var mdEditor = editormd("content", {
                         //width  : "90%",
                         height: 640,
-                        path: "https://cfcdn.20090217.xyz/editormd/lib/",
+                        path: "https://unpkg.com/editor.md@1.5.0/lib/",
                         appendMarkdown: articleJson.contentMD, //编辑器赋值
                         saveHTMLToTextarea: true,
                         mode: "markdown",
