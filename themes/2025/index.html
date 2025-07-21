@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="articleList">
+        {{ #articleList.length }} {{ #articleList }}
+        <article id="post-{{&id}}">
+            <div class="all">
+                <header class="entry-header">
+                    <h2 class="entry-title">
+                        <div class="title">
+                            <a href="/article/{{&id}}.html" title="{{ &title }}" rel="{{ &title }}" class="titlea">{{ &title }}</a>
+                        </div>
+
+
+                    </h2>
+                </header>
+                <div class="indextext">
+                    <p class="preview">
+                        {{ &contentText }} ...
+                    </p>
+
+                    <footer class="entry-meta">
+                        <span>分类:
+                            {{ #category }}
+                                <a href="/category/{{&.}}" rel="category tag" class="link">{{&.}}</a>
+                            {{ /category }}
+                            </span>
+                        <span>标签：
+                            {{ #tags }}
+                                <a href="/tags/{{&.}}" rel="tag" class="link">{{&.}}</a>
+                            {{ /tags }}
+                            </span>
+                        <span>{{ &createDate10 }}</span>
+                    </footer>
+                </div>
+
+            </div>
+        </article>
+        {{ /articleList }} {{ /articleList.length }}
+
+    </div>
+</body>
+
+</html>
