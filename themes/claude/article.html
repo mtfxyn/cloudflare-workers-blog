@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,148 +12,229 @@
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f5f5f5;
+            min-height: 100vh;
+            position: relative;
         }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://bing.img.run/uhd.php');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -2;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
+        
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: #3498db;
+            color: white;
             text-decoration: none;
             padding: 10px 20px;
-            background: white;
+            background: rgba(52, 152, 219, 0.9);
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transition: background 0.3s;
         }
+        
         .back-link:hover {
-            background: #3498db;
-            color: white;
+            background: rgba(41, 128, 185, 0.95);
         }
+        
         .article {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 10px;
             padding: 40px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
         }
+        
         .article-header {
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
         }
+        
         .article-title {
             font-size: 2.2em;
             color: #2c3e50;
             margin-bottom: 15px;
+            line-height: 1.3;
         }
+        
         .article-meta {
-            color: #7f8c8d;
+            color: #666;
             font-size: 0.9em;
         }
+        
         .article-meta span {
             margin: 0 10px;
         }
+        
         .article-content {
             font-size: 1.1em;
             line-height: 1.8;
+            color: #333;
         }
-        .article-content h1, 
-        .article-content h2, 
-        .article-content h3, 
-        .article-content h4, 
-        .article-content h5, 
+        
+        .article-content h1,
+        .article-content h2,
+        .article-content h3,
+        .article-content h4,
+        .article-content h5,
         .article-content h6 {
             margin: 30px 0 15px 0;
             color: #2c3e50;
         }
+        
         .article-content p {
             margin-bottom: 20px;
         }
+        
         .article-content img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
             margin: 20px 0;
         }
+        
         .article-content blockquote {
             border-left: 4px solid #3498db;
             padding-left: 20px;
             margin: 20px 0;
             color: #555;
             font-style: italic;
+            background: rgba(52, 152, 219, 0.05);
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 5px 5px 0;
         }
+        
         .article-content code {
-            background: #f8f9fa;
+            background: rgba(248, 249, 250, 0.9);
             padding: 2px 6px;
             border-radius: 3px;
             font-family: 'Courier New', monospace;
         }
+        
         .article-content pre {
-            background: #f8f9fa;
+            background: rgba(248, 249, 250, 0.9);
             padding: 20px;
             border-radius: 5px;
             overflow-x: auto;
             margin: 20px 0;
         }
+        
         .article-content pre code {
             background: none;
             padding: 0;
         }
+        
         .article-footer {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #ddd;
         }
+        
         .tags {
             margin-bottom: 20px;
         }
+        
         .tag {
             display: inline-block;
-            background: #ecf0f1;
+            background: rgba(236, 240, 241, 0.9);
             color: #555;
             padding: 5px 12px;
             margin: 5px 5px 5px 0;
             border-radius: 15px;
             text-decoration: none;
             font-size: 0.9em;
+            transition: all 0.3s;
         }
+        
         .tag:hover {
-            background: #3498db;
+            background: rgba(52, 152, 219, 0.9);
             color: white;
         }
+        
         .nav-links {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-top: 30px;
         }
+        
         .nav-link {
             padding: 20px;
-            background: #ecf0f1;
+            background: rgba(236, 240, 241, 0.9);
             border-radius: 5px;
             text-decoration: none;
             color: #333;
             text-align: center;
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
         }
+        
         .nav-link:hover {
-            background: #3498db;
+            background: rgba(52, 152, 219, 0.9);
             color: white;
         }
+        
         .nav-link.prev {
             grid-column: 1;
         }
+        
         .nav-link.next {
             grid-column: 2;
         }
-        @media (max-width: 600px) {
+        
+        @media (max-width: 768px) {
+            body::before {
+                background-image: url('https://bing.img.run/m.php');
+                background-attachment: scroll;
+            }
+            .container {
+                padding: 15px;
+            }
+            .article {
+                padding: 25px 20px;
+            }
+            .article-title {
+                font-size: 1.6em;
+            }
+            .article-content {
+                font-size: 1em;
+            }
             .nav-links {
                 grid-template-columns: 1fr;
             }
@@ -161,44 +243,54 @@
                 grid-column: 1;
             }
         }
+        
+        @media (max-width: 480px) {
+            .article {
+                padding: 20px 15px;
+            }
+            .article-title {
+                font-size: 1.4em;
+            }
+            .article-content {
+                font-size: 0.95em;
+            }
+            .back-link {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <a href="/" class="back-link">← 返回首页</a>
-        
+
         <article class="article">
             <header class="article-header">
                 <h1 class="article-title">{{&articleSingle.title}}</h1>
                 <div class="article-meta">
-                    <span>{{&articleSingle.createDate}}</span>
-                    {{#articleSingle.category}}
-                    <span>分类：{{&.}}</span>
-                    {{/articleSingle.category}}
+                    <span>{{&articleSingle.createDate}}</span> {{#articleSingle.category}}
+                    <span>分类:{{&.}}</span> {{/articleSingle.category}}
                 </div>
             </header>
             <div class="article-content">
                 {{{articleSingle.contentHtml}}}
             </div>
             <footer class="article-footer">
-                {{#articleSingle.tags}}
-                {{#.}}
+                {{#articleSingle.tags}} {{#.}}
                 <div class="tags">
                     {{#articleSingle.tags}}
-                    <a href="/tags/{{&.}}" class="tag">#{{&.}}</a>
-                    {{/articleSingle.tags}}
+                    <a href="/tags/{{&.}}" class="tag">#{{&.}}</a> {{/articleSingle.tags}}
                 </div>
-                {{/.}}
-                {{/articleSingle.tags}}
+                {{/.}} {{/articleSingle.tags}}
                 <div class="nav-links">
                     {{#articleNewer}}
                     <a href="{{&url}}" class="nav-link prev">
                         <div>← 上一篇</div>
                         <div>{{&title}}</div>
                     </a>
-                    {{/articleNewer}}
-                    
-                    {{#articleOlder}}
+                    {{/articleNewer}} {{#articleOlder}}
                     <a href="{{&url}}" class="nav-link next">
                         <div>下一篇 →</div>
                         <div>{{&title}}</div>
@@ -209,4 +301,5 @@
         </article>
     </div>
 </body>
+
 </html>
