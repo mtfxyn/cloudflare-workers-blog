@@ -53,6 +53,14 @@
             padding: 20px;
         }
         
+        #pjax-container {
+            transition: opacity 0.3s ease;
+        }
+        
+        #pjax-container.loading {
+            opacity: 0.5;
+        }
+        
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
@@ -264,42 +272,62 @@
 
 <body>
     <div class="container">
-        <a href="/" class="back-link">← 返回首页</a>
+        <div id="pjax-container">
+            <a href="/" class="back-link">← 返回首页</a>
 
-        <article class="article">
-            <header class="article-header">
-                <h1 class="article-title">{{&articleSingle.title}}</h1>
-                <div class="article-meta">
-                    <span>{{&articleSingle.createDate}}</span> {{#articleSingle.category}}
-                    <span>分类:{{&.}}</span> {{/articleSingle.category}}
+            <article class="article">
+                <header class="article-header">
+                    <h1 class="article-title">{{&articleSingle.title}}</h1>
+                    <div class="article-meta">
+                        <span>{{&articleSingle.createDate}}</span> {{#articleSingle.category}}
+                        <span>分类:{{&.}}</span> {{/articleSingle.category}}
+                    </div>
+                </header>
+                <div class="article-content">
+                    {{{articleSingle.contentHtml}}}
                 </div>
-            </header>
-            <div class="article-content">
-                {{{articleSingle.contentHtml}}}
-            </div>
-            <footer class="article-footer">
-                {{#articleSingle.tags}} {{#.}}
-                <div class="tags">
-                    {{#articleSingle.tags}}
-                    <a href="/tags/{{&.}}" class="tag">#{{&.}}</a> {{/articleSingle.tags}}
-                </div>
-                {{/.}} {{/articleSingle.tags}}
-                <div class="nav-links">
-                    {{#articleNewer}}
-                    <a href="{{&url}}" class="nav-link prev">
-                        <div>← 上一篇</div>
-                        <div>{{&title}}</div>
-                    </a>
-                    {{/articleNewer}} {{#articleOlder}}
-                    <a href="{{&url}}" class="nav-link next">
-                        <div>下一篇 →</div>
-                        <div>{{&title}}</div>
-                    </a>
-                    {{/articleOlder}}
-                </div>
-            </footer>
-        </article>
+                <footer class="article-footer">
+                    {{#articleSingle.tags}} {{#.}}
+                    <div class="tags">
+                        {{#articleSingle.tags}}
+                        <a href="/tags/{{&.}}" class="tag">#{{&.}}</a> {{/articleSingle.tags}}
+                    </div>
+                    {{/.}} {{/articleSingle.tags}}
+                    <div class="nav-links">
+                        {{#articleNewer}}
+                        <a href="{{&url}}" class="nav-link prev">
+                            <div>← 上一篇</div>
+                            <div>{{&title}}</div>
+                        </a>
+                        {{/articleNewer}} {{#articleOlder}}
+                        <a href="{{&url}}" class="nav-link next">
+                            <div>下一篇 →</div>
+                            <div>{{&title}}</div>
+                        </a>
+                        {{/articleOlder}}
+                    </div>
+                </footer>
+            </article>
+        </div>
     </div>
+
+    <!-- PJAX 库 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+    <script>
+        $(document).pjax('a', '#pjax-container', {
+            timeout: 8000,
+            scrollTo: 0
+        });
+
+        $(document).on('pjax:send', function() {
+            $('#pjax-container').addClass('loading');
+        });
+
+        $(document).on('pjax:complete', function() {
+            $('#pjax-container').removeClass('loading');
+        });
+    </script>
 </body>
 
 </html>

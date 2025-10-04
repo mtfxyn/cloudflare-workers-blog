@@ -53,6 +53,14 @@
             padding: 20px;
         }
         
+        #pjax-container {
+            transition: opacity 0.3s ease;
+        }
+        
+        #pjax-container.loading {
+            opacity: 0.5;
+        }
+        
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -186,34 +194,54 @@
 
 <body>
     <div class="container">
-        <header>
-            <h1>{{&OPT.siteName}}</h1>
-            <p class="subtitle">{{&OPT.siteDescription}}</p>
-        </header>
-        <div class="posts">
-            {{#articleList}}
-            <article class="post-card">
-                <h2 class="post-title">
-                    <a href="/article/{{&id}}/{{&link}}.html">{{&title}}</a>
-                </h2>
-                <div class="post-meta">
-                    <span>{{&createDate}}</span> {{#category}}
-                    <span> · {{&.}}</span> {{/category}}
-                </div>
-                <div class="post-excerpt">
-                    {{&summary}}
-                </div>
-            </article>
-            {{/articleList}}
+        <div id="pjax-container">
+            <header>
+                <h1>{{&OPT.siteName}}</h1>
+                <p class="subtitle">{{&OPT.siteDescription}}</p>
+            </header>
+            <div class="posts">
+                {{#articleList}}
+                <article class="post-card">
+                    <h2 class="post-title">
+                        <a href="/article/{{&id}}/{{&link}}.html">{{&title}}</a>
+                    </h2>
+                    <div class="post-meta">
+                        <span>{{&createDate}}</span> {{#category}}
+                        <span> · {{&.}}</span> {{/category}}
+                    </div>
+                    <div class="post-excerpt">
+                        {{&summary}}
+                    </div>
+                </article>
+                {{/articleList}}
+            </div>
+            {{#pagination}}
+            <div class="pagination">
+                {{#prev}}
+                <a href="{{&url}}">上一页</a> {{/prev}} {{#next}}
+                <a href="{{&url}}">下一页</a> {{/next}}
+            </div>
+            {{/pagination}}
         </div>
-        {{#pagination}}
-        <div class="pagination">
-            {{#prev}}
-            <a href="{{&url}}">上一页</a> {{/prev}} {{#next}}
-            <a href="{{&url}}">下一页</a> {{/next}}
-        </div>
-        {{/pagination}}
     </div>
+
+    <!-- PJAX 库 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+    <script>
+        $(document).pjax('a', '#pjax-container', {
+            timeout: 8000,
+            scrollTo: 0
+        });
+
+        $(document).on('pjax:send', function() {
+            $('#pjax-container').addClass('loading');
+        });
+
+        $(document).on('pjax:complete', function() {
+            $('#pjax-container').removeClass('loading');
+        });
+    </script>
 </body>
 
 </html>
